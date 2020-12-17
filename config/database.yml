@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV.fetch("DBUSER") { "postgres" } %>
+  password: <%= ENV.fetch("DBPASSWORD") { nil } %>
+  host: <%= ENV.fetch("DBHOST") { "localhost" } %>
+  port: <%= ENV.fetch("DBPORT") { 5432 } %>
+  min_messages: notice
+
+development:
+  <<: *default
+  database: <%= ENV.fetch("DBNAME") { "otcstats_development" } %>
+
+test:
+  <<: *default
+  database: <%= ENV.fetch("DBNAME") { "otcstats_test" } %>

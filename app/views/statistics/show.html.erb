@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Organisation:</strong>
+  <%= @statistic.organisation_id %>
+</p>
+
+<p>
+  <strong>Graph:</strong>
+  <%= @statistic.graph_id %>
+</p>
+
+<p>
+  <strong>Added by:</strong>
+  <%= @statistic.added_by %>
+</p>
+
+<p>
+  <strong>Week ending at:</strong>
+  <%= @statistic.week_ending_at %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @statistic.value %>
+</p>
+
+<p>
+  <strong>Fact column 1:</strong>
+  <%= @statistic.fact_column_1 %>
+</p>
+
+<p>
+  <strong>Fact column 2:</strong>
+  <%= @statistic.fact_column_2 %>
+</p>
+
+<p>
+  <strong>Fact column 3:</strong>
+  <%= @statistic.fact_column_3 %>
+</p>
+
+<p>
+  <strong>Fact column 4:</strong>
+  <%= @statistic.fact_column_4 %>
+</p>
+
+<%= link_to 'Edit', edit_statistic_path(@statistic) %> |
+<%= link_to 'Back', statistics_path %>

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Graphs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Organisation</th>
+      <th>Name</th>
+      <th>Item number</th>
+      <th>Short name</th>
+      <th>Defintion</th>
+      <th>Value title</th>
+      <th>Field titles</th>
+      <th>Envisage key</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @graphs.each do |graph| %>
+      <tr>
+        <td><%= graph.organisation_id %></td>
+        <td><%= graph.name %></td>
+        <td><%= graph.item_number %></td>
+        <td><%= graph.short_name %></td>
+        <td><%= graph.defintion %></td>
+        <td><%= graph.value_title %></td>
+        <td><%= graph.field_titles %></td>
+        <td><%= graph.envisage_key %></td>
+        <td><%= link_to 'Show', graph %></td>
+        <td><%= link_to 'Edit', edit_graph_path(graph) %></td>
+        <td><%= link_to 'Destroy', graph, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Graph', new_graph_path %>

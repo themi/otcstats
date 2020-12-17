@@ -1,0 +1,2 @@
+class GraphPolicy < ApplicationPolicy
+end

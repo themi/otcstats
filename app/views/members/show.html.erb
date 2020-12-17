@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Organisation:</strong>
+  <%= @member.organisation_id %>
+</p>
+
+<p>
+  <strong>Full name:</strong>
+  <%= @member.full_name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @member.phone %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @member.address %>
+</p>
+
+<p>
+  <strong>Training level:</strong>
+  <%= @member.training_level %>
+</p>
+
+<p>
+  <strong>Processing level:</strong>
+  <%= @member.processing_level %>
+</p>
+
+<p>
+  <strong>Envisage key:</strong>
+  <%= @member.envisage_key %>
+</p>
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>

@@ -1,0 +1,62 @@
+<%= form_with(model: statistic) do |form| %>
+  <% if statistic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(statistic.errors.count, "error") %> prohibited this statistic from being saved:</h2>
+
+      <ul>
+        <% statistic.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :organisation_id %>
+    <%= form.text_field :organisation_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :graph_id %>
+    <%= form.text_field :graph_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :added_by %>
+    <%= form.number_field :added_by %>
+  </div>
+
+  <div class="field">
+    <%= form.label :week_ending_at %>
+    <%= form.datetime_select :week_ending_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_field :value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fact_column_1 %>
+    <%= form.text_field :fact_column_1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fact_column_2 %>
+    <%= form.text_field :fact_column_2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fact_column_3 %>
+    <%= form.text_field :fact_column_3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fact_column_4 %>
+    <%= form.text_field :fact_column_4 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

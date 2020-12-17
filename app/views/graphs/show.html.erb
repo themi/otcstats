@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Organisation:</strong>
+  <%= @graph.organisation_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @graph.name %>
+</p>
+
+<p>
+  <strong>Item number:</strong>
+  <%= @graph.item_number %>
+</p>
+
+<p>
+  <strong>Short name:</strong>
+  <%= @graph.short_name %>
+</p>
+
+<p>
+  <strong>Defintion:</strong>
+  <%= @graph.defintion %>
+</p>
+
+<p>
+  <strong>Value title:</strong>
+  <%= @graph.value_title %>
+</p>
+
+<p>
+  <strong>Field titles:</strong>
+  <%= @graph.field_titles %>
+</p>
+
+<p>
+  <strong>Envisage key:</strong>
+  <%= @graph.envisage_key %>
+</p>
+
+<%= link_to 'Edit', edit_graph_path(@graph) %> |
+<%= link_to 'Back', graphs_path %>
