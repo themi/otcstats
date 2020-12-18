@@ -1,0 +1,8 @@
+<% flash.each do |type, msg| %>
+  <div class="toast d-flex align-items-center text-white bg-<%= notice_alert_color(type) %> border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-body">
+      <%= msg %>
+    </div>
+    <button type="button" class="btn-close btn-close-white ms-auto me-2" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+<% end %>

@@ -9,4 +9,7 @@
 #  updated_at   :datetime         not null
 #
 class Organisation < ApplicationRecord
+  def to_s
+    self.name
+  end
 end

@@ -1,57 +1,20 @@
-<%= form_with(model: graph) do |form| %>
-  <% if graph.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(graph.errors.count, "error") %> prohibited this graph from being saved:</h2>
 
-      <ul>
-        <% graph.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= simple_form_for(@graph) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="field">
-    <%= form.label :organisation_id %>
-    <%= form.text_field :organisation_id %>
+  <div class="form-inputs">
+    <%= f.association :organisation %>
+    <%= f.input :name %>
+    <%= f.input :item_number %>
+    <%= f.input :short_name %>
+    <%= f.input :defintion %>
+    <%= f.input :value_title %>
+    <%= f.input :field_titles %>
+    <%= f.input :envisage_key %>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :item_number %>
-    <%= form.number_field :item_number %>
-  </div>
-
-  <div class="field">
-    <%= form.label :short_name %>
-    <%= form.text_field :short_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :defintion %>
-    <%= form.text_field :defintion %>
-  </div>
-
-  <div class="field">
-    <%= form.label :value_title %>
-    <%= form.text_field :value_title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :field_titles %>
-    <%= form.text_field :field_titles %>
-  </div>
-
-  <div class="field">
-    <%= form.label :envisage_key %>
-    <%= form.text_field :envisage_key %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>

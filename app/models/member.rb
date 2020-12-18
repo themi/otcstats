@@ -13,6 +13,7 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
+#  role                   :integer          default("member"), not null
 #  training_level         :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
@@ -33,5 +34,19 @@ class Member < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
   belongs_to :organisation
+
+  enum role: [:member, :maintainer]
+  after_initialize :set_default_role, if: :new_record?
+
+  def to_s
+    self.full_name
+  end
+
+  private
+
+  def set_default_role
+    self.role ||= :member
+  end
 end

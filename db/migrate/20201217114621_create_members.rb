@@ -2,13 +2,13 @@ class CreateMembers < ActiveRecord::Migration[6.1]
   def change
     create_table :members do |t|
       t.belongs_to :organisation, null: false, foreign_key: true
+      t.integer :role, null: false, default: 0
       t.string :full_name
       t.string :phone
       t.string :address
       t.string :training_level
       t.string :processing_level
       t.string :envisage_key
-
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -38,7 +38,7 @@ class CreateMembers < ActiveRecord::Migration[6.1]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-      t.timestamps
+      t.timestamps null: false
     end
 
     add_index :members, :email,                unique: true

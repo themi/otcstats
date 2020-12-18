@@ -28,4 +28,8 @@
 class Statistic < ApplicationRecord
   belongs_to :organisation
   belongs_to :graph
+
+  def to_s
+    self.graph
+  end
 end

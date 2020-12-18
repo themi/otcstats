@@ -1,0 +1,22 @@
+<% if current_member.maintainer? %>
+
+<li class="nav-item dropdown">
+  <a class="nav-link" href="javascript:;" id="navbarDropdownMaintainer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="bi bi-graph-up"></i>
+    <span class="mr-2 d-none d-lg-inline small">Stats I/C Menu</span>
+  </a>
+  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMaintainer">
+    <%= link_to "#preview", class: "dropdown-item" do %>
+      <i class="bi bi-files"></i> Preview Stats
+    <% end %>
+    <div class="dropdown-divider"></div>
+    <%= link_to "#export", class: "dropdown-item" do %>
+      <i class="bi bi-file-earmark-break"></i> Export to PDF
+    <% end %>
+    <%= link_to "#upload", class: "dropdown-item" do %>
+      <i class="bi bi-file-bar-graph-fill"></i> Upload to Envisage
+    <% end %>
+  </div>
+</li>
+
+<% end %>

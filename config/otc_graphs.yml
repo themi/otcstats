@@ -2,6 +2,7 @@
 default: &default
   otc_graphs:
   - name: "Total Number of Bridge Steps taken at a Mission, Org or Sea Org Org"
+    active_state: 0
     item_number: 1
     organisation: "OTC ANZO"
     short_name: "Bridge Steps"
@@ -9,6 +10,7 @@ default: &default
     value_title: "ea"
     field_titles: "Name|Service|Org|OTC Member"
   - name: "Value of Funds Paid or Raised for your Ideal Org that week"
+    active_state: 1
     item_number: 2
     organisation: "OTC ANZO"
     short_name: "Funds Raised"
@@ -16,6 +18,7 @@ default: &default
     value_title: "Donated or Raised"
     field_titles: "Name|Org|OTC Member"
   - name: "Value of Funds Paid or Raised for other Orgs as an Alliance activity"
+    active_state: 0
     item_number: 3
     organisation: "OTC ANZO"
     short_name: "Alliance Funds Raised"
@@ -23,6 +26,7 @@ default: &default
     value_title: "Donated or Raised"
     field_titles: "Name|Org|OTC Member"
   - name: "Total number of OT Ambassadors and OT Committee members"
+    active_state: 1
     item_number: 4
     organisation: "OTC ANZO"
     short_name: "Members"
@@ -30,6 +34,7 @@ default: &default
     value_title: "Total"
     field_titles: nil
   - name: "Number of Active OT Ambassadors and OT Committee Members this week"
+    active_state: 0
     item_number: 5
     organisation: "OTC ANZO"
     short_name: "Active Members"
@@ -37,6 +42,7 @@ default: &default
     value_title: "Active"
     field_titles: "Name|Project or Post"
   - name: "Number of OT Committee members attending the weekly OT Committee meeting in their org."
+    active_state: 0
     item_number: 6
     organisation: "OTC ANZO"
     short_name: "Attendance"
@@ -44,6 +50,7 @@ default: &default
     value_title: "Total"
     field_titles: nil
   - name: "Number of Events held per the OT Ambassador Program."
+    active_state: 0
     item_number: 7
     organisation: "OTC ANZO"
     short_name: "Events"
@@ -51,6 +58,7 @@ default: &default
     value_title: "ea"
     field_titles: "Event|Products|I/C"
   - name: "Number of Books Sold to Raw Public"
+    active_state: 0
     item_number: 8
     organisation: "OTC ANZO"
     short_name: "Books Sold"
@@ -58,6 +66,7 @@ default: &default
     value_title: "Total Sold"
     field_titles: nil
   - name: "Total Volunteer Hours on OT Projects per the OT Ambassador Program."
+    active_state: 0
     item_number: 9
     organisation: "OTC ANZO"
     short_name: "Volunteer Hours"
@@ -65,6 +74,7 @@ default: &default
     value_title: "Hours"
     field_titles: "Project or Post|OTC/Project Member"
   - name: "Number of Volunteers working on Files Projects"
+    active_state: 1
     item_number: 10
     organisation: "OTC ANZO"
     short_name: "Files Project"
@@ -72,6 +82,7 @@ default: &default
     value_title: "ea"
     field_titles: "Project|Volunteer"
   - name: "Number of People Assisted to Join Staff"
+    active_state: 0
     item_number: 11
     organisation: "OTC ANZO"
     short_name: "Joined Staff"
@@ -79,6 +90,7 @@ default: &default
     value_title: "ea"
     field_titles: "Name|Org|OTC Member"
   - name: "Compliance Reports on the OT Ambassador Program and OT Projects."
+    active_state: 1
     item_number: 12
     organisation: "OTC ANZO"
     short_name: "Compliance Reports"
@@ -86,6 +98,7 @@ default: &default
     value_title: "Total"
     field_titles: nil
   - name: "Funds Raised for the IAS in US$."
+    active_state: 0
     item_number: 13
     organisation: "OTC ANZO"
     short_name: "IAS"

@@ -1,28 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Statistics</h1>
+<h1>OT Committee Statistics<small class="text-muted"> - Data Entry</small></h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Organisation</th>
-      <th>Graph</th>
-      <th>Added by</th>
-      <th>Week ending at</th>
-      <th>Value</th>
-      <th>Fact column 1</th>
-      <th>Fact column 2</th>
-      <th>Fact column 3</th>
-      <th>Fact column 4</th>
-      <th colspan="3"></th>
+      <th scope="col">Graph</th>
+      <th scope="col">Organisation</th>
+      <th scope="col">Added by</th>
+      <th scope="col">Week ending at</th>
+      <th scope="col">Value</th>
+      <th scope="col">Fact column 1</th>
+      <th scope="col">Fact column 2</th>
+      <th scope="col">Fact column 3</th>
+      <th scope="col">Fact column 4</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
 
   <tbody>
     <% @statistics.each do |statistic| %>
       <tr>
+        <th scope="row"><%= statistic.graph_id %></td>
         <td><%= statistic.organisation_id %></td>
-        <td><%= statistic.graph_id %></td>
         <td><%= statistic.added_by %></td>
         <td><%= statistic.week_ending_at %></td>
         <td><%= statistic.value %></td>
@@ -30,9 +30,7 @@
         <td><%= statistic.fact_column_2 %></td>
         <td><%= statistic.fact_column_3 %></td>
         <td><%= statistic.fact_column_4 %></td>
-        <td><%= link_to 'Show', statistic %></td>
-        <td><%= link_to 'Edit', edit_statistic_path(statistic) %></td>
-        <td><%= link_to 'Destroy', statistic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= table_action_buttons(organisation) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -40,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Statistic', new_statistic_path %>
+<%= create_new_action_button("Statistic") %>

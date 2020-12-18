@@ -1,36 +1,26 @@
-<p id="notice"><%= notice %></p>
+<h1>OT Committee Statistics<small class="text-muted"> - Graphs</small></h1>
 
-<h1>Graphs</h1>
-
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Organisation</th>
-      <th>Name</th>
-      <th>Item number</th>
-      <th>Short name</th>
-      <th>Defintion</th>
-      <th>Value title</th>
-      <th>Field titles</th>
-      <th>Envisage key</th>
-      <th colspan="3"></th>
+      <th scope="col">#</th>
+      <th scope="col">Organisation</th>
+      <th scope="col">Name</th>
+      <th scope="col">Abbr</th>
+      <th scope="col">Defintion</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
 
   <tbody>
     <% @graphs.each do |graph| %>
       <tr>
-        <td><%= graph.organisation_id %></td>
+        <th scope="row"><%= graph.item_number %></td>
+        <td><%= graph.organisation %></td>
         <td><%= graph.name %></td>
-        <td><%= graph.item_number %></td>
         <td><%= graph.short_name %></td>
         <td><%= graph.defintion %></td>
-        <td><%= graph.value_title %></td>
-        <td><%= graph.field_titles %></td>
-        <td><%= graph.envisage_key %></td>
-        <td><%= link_to 'Show', graph %></td>
-        <td><%= link_to 'Edit', edit_graph_path(graph) %></td>
-        <td><%= link_to 'Destroy', graph, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= graph_action_buttons(graph) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Graph', new_graph_path %>
+<%= create_new_action_button("Graph") %>

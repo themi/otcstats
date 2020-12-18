@@ -5,6 +5,7 @@ RSpec.describe "members/index", type: :view do
     assign(:members, [
       Member.create!(
         organisation: nil,
+        role: 2,
         full_name: "Full Name",
         phone: "Phone",
         address: "Address",
@@ -14,6 +15,7 @@ RSpec.describe "members/index", type: :view do
       ),
       Member.create!(
         organisation: nil,
+        role: 2,
         full_name: "Full Name",
         phone: "Phone",
         address: "Address",
@@ -27,6 +29,7 @@ RSpec.describe "members/index", type: :view do
   it "renders a list of members" do
     render
     assert_select "tr>td", text: nil.to_s, count: 2
+    assert_select "tr>td", text: 2.to_s, count: 2
     assert_select "tr>td", text: "Full Name".to_s, count: 2
     assert_select "tr>td", text: "Phone".to_s, count: 2
     assert_select "tr>td", text: "Address".to_s, count: 2

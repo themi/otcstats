@@ -11,6 +11,7 @@ namespace :dbmaint do
         Graph.find_or_create_by(organisation: org, name: row[:name]) do |r|
           r.item_number = row[:item_number]
           r.name = row[:name]
+          r.active_state = row[:active_state]
           r.short_name = row[:short_name]
           r.defintion = row[:defintion]
           r.value_title = row[:value_title]
@@ -27,6 +28,7 @@ namespace :dbmaint do
         Member.find_or_create_by(organisation: org, full_name: row["full_name"]) do |r|
           r.organisation = org
           r.full_name = row["full_name"]
+          r.role = row["role"]
           r.email = row["email"]
           r.address = row["address"]
           r.phone = row["phone"]

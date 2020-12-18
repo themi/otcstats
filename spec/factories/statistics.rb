@@ -30,7 +30,7 @@ FactoryBot.define do
     organisation { nil }
     graph { nil }
     added_by { 1 }
-    week_ending_at { "2020-12-17 15:54:22" }
+    week_ending_at { "2020-12-17 22:48:52" }
     value { 1.5 }
     fact_column_1 { "MyString" }
     fact_column_2 { "MyString" }

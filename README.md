@@ -1,5 +1,9 @@
 # OTC Stats Capture
 
+## Implementation Notes
+
+* Install bootstrap4
+  - https://www.mashrurhossain.com/blog/rails6bootstrap4
 
 ## Structure
 
@@ -19,12 +23,13 @@ t.string :envisage_key
 ```
 rails destroy scaffold Member
 
-rails g scaffold Member organisation:belongs_to full_name phone address training_level processing_level envisage_key
+rails g scaffold Member organisation:belongs_to role:integer full_name phone address training_level processing_level envisage_key
 
 rails g devise Member
 
 # then add these
 t.belongs_to :organisation
+t.integer    :role, null: false, default: 0
 t.string     :full_name
 t.string     :phone
 t.string     :address
@@ -38,7 +43,7 @@ t.string     :envisage_key
 ```
 rails destroy scaffold Graph
 
-rails g scaffold Graph organisation:belongs_to name item_number:integer short_name defintion value_title field_titles envisage_key
+rails g scaffold Graph organisation:belongs_to name item_number:integer short_name defintion value_title field_titles envisage_key active_state:integer
 
 t.belongs_to :organisation
 t.string :name
@@ -48,6 +53,7 @@ t.string :defintion
 t.string :value_title
 t.string :field_titles
 t.string :envisage_key
+t.integer :active_state, null: false, default: 0
 ```
 
 * statistics:

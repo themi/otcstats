@@ -4,6 +4,7 @@ RSpec.describe "members/new", type: :view do
   before(:each) do
     assign(:member, Member.new(
       organisation: nil,
+      role: 1,
       full_name: "MyString",
       phone: "MyString",
       address: "MyString",
@@ -19,6 +20,8 @@ RSpec.describe "members/new", type: :view do
     assert_select "form[action=?][method=?]", members_path, "post" do
 
       assert_select "input[name=?]", "member[organisation_id]"
+
+      assert_select "input[name=?]", "member[role]"
 
       assert_select "input[name=?]", "member[full_name]"
 
