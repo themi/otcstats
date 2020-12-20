@@ -1,6 +1,10 @@
-<h1>Editing Member</h1>
+<div class="container">
 
-<%= render 'form', member: @member %>
+  <h1>Editing Member</h1>
 
-<%= link_to 'Show', @member %> |
-<%= link_to 'Back', members_path %>
+  <%= render 'form', member: @member %>
+
+  <%= link_to 'Show', @member, class: "btn btn-primary mb-1" %>
+  <%= link_to 'Back', members_path, class: "btn btn-info mb-1" %>
+
+</div>

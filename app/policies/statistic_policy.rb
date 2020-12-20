@@ -1,2 +1,0 @@
-class StatisticPolicy < ApplicationPolicy
-end

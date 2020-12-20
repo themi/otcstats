@@ -17,7 +17,7 @@ gem 'simple_form'
 gem 'browser'  # https://github.com/fnando/browser
 
 gem 'devise'
-gem 'pundit'
+# gem 'pundit'
 # gem 'image_processing', '~> 1.2'
 
 group :development do

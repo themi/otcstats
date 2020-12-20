@@ -1,37 +1,36 @@
-<h1>OT Committee Statistics<small class="text-muted"> - Members</small></h1>
+<div class="container">
+  <h1>Members</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Full name</th>
-      <th scope="col">Organisation</th>
-      <th scope="col">Role</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Address</th>
-      <th scope="col">Training level</th>
-      <th scope="col">Processing level</th>
-      <th scope="col">Envisage key</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @members.each do |member| %>
+  <table class="table">
+    <thead>
       <tr>
-        <th scope="row"><%= member.full_name %></td>
-        <td><%= member.organisation_id %></td>
-        <td><%= member.role %></td>
-        <td><%= member.phone %></td>
-        <td><%= member.address %></td>
-        <td><%= member.training_level %></td>
-        <td><%= member.processing_level %></td>
-        <td><%= member.envisage_key %></td>
-        <td><%= table_action_buttons(member, []) %></td>
+        <th scope="col">Full name</th>
+        <th scope="col">Organisation</th>
+        <th scope="col">Role</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Address</th>
+        <th scope="col">Training level</th>
+        <th scope="col">Processing level</th>
+        <th scope="col">Envisage key</th>
+        <th scope="col">Action</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @members.each do |member| %>
+        <tr>
+          <th scope="row"><%= member.full_name %></td>
+          <td><%= member.organisation_id %></td>
+          <td><%= member.role %></td>
+          <td><%= member.phone %></td>
+          <td><%= member.address %></td>
+          <td><%= member.training_level %></td>
+          <td><%= member.processing_level %></td>
+          <td><%= member.envisage_key %></td>
+          <td><%= table_action_buttons(member, []) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= create_new_action_button("Member") %>
+</div>

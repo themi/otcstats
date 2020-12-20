@@ -5,9 +5,11 @@ class StatisticsController < ApplicationController
   # GET /statistics
   # GET /statistics.json
   def index
-    @statistics = Statistic.where(graph_id: @graph.id).
-      where(added_by_id: current_member.id).
-      where(week_ending_at: Time.current.production_end_of_week.to_date)
+    if current_member.member?
+      @statistics = Statistic.my_recent(@graph.id, current_member.id)
+    else
+      @statistics = Statistic.recent(@graph.id)
+    end
   end
 
   # GET /statistics/1

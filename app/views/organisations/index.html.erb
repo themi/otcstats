@@ -1,25 +1,27 @@
-<h1>OT Committee Statistics<small class="text-muted"> - Organisations</small></h1>
+<div class="container">
+  <h1>Organisations</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Envisage key</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @organisations.each do |organisation| %>
+  <table class="table">
+    <thead>
       <tr>
-        <th scope="row"><%= organisation.name %></td>
-        <td><%= organisation.envisage_key %></td>
-        <td><%= table_action_buttons(organisation, []) %></td>
+        <th scope="col">Name</th>
+        <th scope="col">Envisage key</th>
+        <th scope="col">Action</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @organisations.each do |organisation| %>
+        <tr>
+          <th scope="row"><%= organisation.name %></td>
+          <td><%= organisation.envisage_key %></td>
+          <td><%= table_action_buttons(organisation, []) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= create_new_action_button("Organisation") %>
+  <br>
+
+  <%= create_new_action_button("Organisation") %>
+</div>

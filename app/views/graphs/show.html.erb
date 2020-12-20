@@ -1,6 +1,4 @@
 <div class="container">
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Organisation:</strong>
   <%= @graph.organisation_id %>
@@ -41,6 +39,6 @@
   <%= @graph.envisage_key %>
 </p>
 
-<%= link_to 'Edit', edit_graph_path(@graph), class: "btn btn-primary" %> |
-<%= link_to 'Back', graphs_path, class: "btn btn-info" %>
+<%= link_to 'Edit', edit_graph_path(@graph), class: "btn btn-primary mb-1" %>
+<%= link_to 'Back', graphs_path, class: "btn btn-info mb-1" %>
 </div>

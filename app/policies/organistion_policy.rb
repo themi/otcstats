@@ -1,2 +1,0 @@
-class OrganisationPolicy < ApplicationPolicy
-end

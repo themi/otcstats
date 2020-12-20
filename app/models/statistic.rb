@@ -30,6 +30,25 @@ class Statistic < ApplicationRecord
   belongs_to :graph
   belongs_to :added_by, class_name: "Member"
 
+  scope :my_recent, ->(graph_id, member_id) {
+    where(graph_id: graph_id).
+    where(added_by_id: member_id).
+    where(week_ending_at: Time.current.production_end_of_week.to_date)
+  }
+
+  scope :recent, ->(graph_id) {
+    where(graph_id: graph_id).
+    where(week_ending_at: Time.current.production_end_of_week.to_date)
+  }
+
+  def self.total_stats(graph_id)
+    self.recent(graph_id).sum(:value)
+  end
+
+  def self.my_total_stats(graph_id, member_id)
+    self.my_recent(graph_id, member_id).sum(:value)
+  end
+
   def to_s
     self.graph
   end
