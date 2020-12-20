@@ -1,13 +1,18 @@
-<h1>OT Committee Statistics<small class="text-muted"> - Graphs</small></h1>
+<div class="container">
+<h1>OT Committee Statistics</h1>
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
+      <% unless browser_object.is_mobile? %>
       <th scope="col">Organisation</th>
-      <th scope="col">Name</th>
+      <% end %>
       <th scope="col">Abbr</th>
+      <th scope="col">Name</th>
+      <% unless browser_object.is_mobile? %>
       <th scope="col">Defintion</th>
+      <% end %>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -16,10 +21,14 @@
     <% @graphs.each do |graph| %>
       <tr>
         <th scope="row"><%= graph.item_number %></td>
+        <% unless browser_object.is_mobile? %>
         <td><%= graph.organisation %></td>
-        <td><%= graph.name %></td>
+        <% end %>
         <td><%= graph.short_name %></td>
+        <td><%= graph.name %></td>
+        <% unless browser_object.is_mobile? %>
         <td><%= graph.defintion %></td>
+        <% end %>
         <td><%= graph_action_buttons(graph) %></td>
       </tr>
     <% end %>
@@ -29,3 +38,4 @@
 <br>
 
 <%= create_new_action_button("Graph") %>
+</div>

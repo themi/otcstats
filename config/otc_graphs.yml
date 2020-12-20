@@ -32,7 +32,6 @@ default: &default
     short_name: "Members"
     defintion: "This is the total number of OT Ambassadors and OT Committee members on your OT Committee."
     value_title: "Total"
-    field_titles: nil
   - name: "Number of Active OT Ambassadors and OT Committee Members this week"
     active_state: 0
     item_number: 5
@@ -48,7 +47,6 @@ default: &default
     short_name: "Attendance"
     defintion: "This is the total number of OT Ambassadors and OT Committee members who are members of the local OT Committee and have attended the OT Committee meeting that week."
     value_title: "Total"
-    field_titles: nil
   - name: "Number of Events held per the OT Ambassador Program."
     active_state: 0
     item_number: 7
@@ -64,7 +62,6 @@ default: &default
     short_name: "Books Sold"
     defintion: "(This could be DMSMH or Self Analysis or any other Basic book sold while doing dissemination activities, stress tests etc. Note that this stat would NOT include pamphlets sold such as the VM Booklets)"
     value_title: "Total Sold"
-    field_titles: nil
   - name: "Total Volunteer Hours on OT Projects per the OT Ambassador Program."
     active_state: 0
     item_number: 9
@@ -96,7 +93,6 @@ default: &default
     short_name: "Compliance Reports"
     defintion: "Definition: This is the total number of targets done with compliance reports on the OT Ambassador Program and the OT projects done by the OT Committee as per the OT Ambassador Program."
     value_title: "Total"
-    field_titles: nil
   - name: "Funds Raised for the IAS in US$."
     active_state: 0
     item_number: 13

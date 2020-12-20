@@ -33,6 +33,18 @@ class Graph < ApplicationRecord
     self.short_name
   end
 
+  def get_field_title_for(index)
+    if field_titles_array.any? &&
+        field_titles_array.length >= (index + 1)
+
+      field_titles_array[index]
+    end
+  end
+
+  def field_titles_array
+    @field_titles_array ||= (self.field_titles || "").split("|")
+  end
+
   private
 
   def set_default_active_state

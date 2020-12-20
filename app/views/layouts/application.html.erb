@@ -18,13 +18,13 @@
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
-    <%= render "flash_message" %>
     <%= render "navbar" %>
     <hr>
-    <div class="container main-container">
-      <%= yield %>
-    </div>
+    <%= yield %>
     <hr>
     <%= render "footer" %>
+    <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+      <%= render "flash_message" %>
+    </div>
   </body>
 </html>

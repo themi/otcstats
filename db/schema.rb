@@ -61,8 +61,8 @@ ActiveRecord::Schema.define(version: 2020_12_17_114852) do
   create_table "statistics", force: :cascade do |t|
     t.bigint "organisation_id", null: false
     t.bigint "graph_id", null: false
-    t.integer "added_by"
-    t.datetime "week_ending_at"
+    t.bigint "added_by_id"
+    t.date "week_ending_at"
     t.float "value"
     t.string "fact_column_1"
     t.string "fact_column_2"

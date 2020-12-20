@@ -15,7 +15,7 @@ namespace :dbmaint do
           r.short_name = row[:short_name]
           r.defintion = row[:defintion]
           r.value_title = row[:value_title]
-          r.field_titles = row[:field_titles]
+          r.field_titles = row[:field_titles] if row[:field_titles]
         end
       end
     end

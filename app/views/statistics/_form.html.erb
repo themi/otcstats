@@ -1,21 +1,31 @@
 
-<%= simple_form_for(@statistic) do |f| %>
+<%= simple_form_for(statistic) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.association :organisation %>
-    <%= f.association :graph %>
-    <%= f.input :added_by %>
+    <%= f.input :graph_id, as: :hidden %>
+    <%= f.input :organisation_id, as: :hidden %>
+    <%= f.input :added_by_id, as: :hidden %>
+
     <%= f.input :week_ending_at %>
-    <%= f.input :value %>
-    <%= f.input :fact_column_1 %>
-    <%= f.input :fact_column_2 %>
-    <%= f.input :fact_column_3 %>
-    <%= f.input :fact_column_4 %>
+
+    <% if statistic.value_title == "ea" %>
+      <%= 1 %>
+      <%= f.input :value, as: :hidden, input_html: { value: 1 } %>
+    <% else %>
+      <%= f.input :value, label: statistic.value_title %>
+    <% end %>
+    <div class="row">
+      <% statistic.field_titles_array.each_with_index do |title, index| %>
+      <div class="col-sm">
+        <%= f.input "fact_column_#{index+1}".to_sym, label: statistic.get_field_title_for(index) %>
+      </div>
+      <% end %>
+    </div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-primary mb-1" %>
   </div>
 <% end %>

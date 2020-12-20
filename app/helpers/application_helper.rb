@@ -10,55 +10,70 @@ module ApplicationHelper
     end
   end
 
+  def render_statistic(stat)
+    "stuff about stuff"
+  end
 
-  def render_fact_titles(field_titles)
+  def render_graph_field_titles(graph)
     if field_titles
       tag.ul do
-        field_titles.split("|").map { |n| tag.li(n) }.join("").html_safe
+        graph.field_titles_array.map { |n| tag.li(n) }.join("").html_safe
       end
     end
   end
 
-
-  def graph_action_buttons(record)
+  def graph_action_buttons(record, commands="ed")
     disabled = record.restricted? && current_member.member?
-
-    link_to_stats = button_to("#", class: "btn btn-success btn-sm m-1", disabled: disabled, data: { toggle: "tooltip", placement: "top" }, title: "Add my stats") do
-      tag.i(class: "bi bi-graph-up")
+    link_to_stats = []
+    link_to_stats << button_to(new_statistic_path, method: :get, class: "btn btn-success btn-sm m-1", disabled: disabled, data: { toggle: "tooltip", placement: "top" }, title: "Add my stats") do
+      concat tag.i(class: "bi bi-graph-up")
+      concat hidden_field_tag('graph_id', record.id)
     end
-
+    link_to_stats << button_to(statistics_path, method: :get, class: "btn btn-primary btn-sm m-1", disabled: disabled, data: { toggle: "tooltip", placement: "top" }, title: "View my stats") do
+      concat tag.i(class: "bi bi-search")
+      concat hidden_field_tag('graph_id', record.id)
+    end
     if current_member.member?
-      link_to_stats
+      link_to_stats.join().html_safe
     else
-      link_to_stats + table_action_buttons(record)
+      table_action_buttons(record, ["graph_id", record.id], link_to_stats, commands)
     end
   end
 
-  def table_action_buttons(record)
-    disabled = current_member.member?
+  def table_action_buttons(record, vars, actions=[], commands="ed")
+    url = "/#{record.class.name.tableize}/#{record.id}"
 
-    url = "/#{record.class.name.tableize}/:#{record.id}"
-
-    button_to(url, class: "btn btn-success btn-sm m-1", disabled: disabled, data: { toggle: "tooltip", placement: "top" }, title: "Display this record") do
-      tag.i(class: "bi bi-search")
-    end + \
-    button_to("#{url}/edit", class: "btn btn-primary btn-sm m-1", disabled: disabled, data: { toggle: "tooltip", placement: "top" }, title: "Edit this record") do
-      tag.i(class: "bi bi-pencil-fill")
-    end + \
-    button_to(url, class: "btn btn-danger btn-sm m-1", disabled: disabled, method: :delete, data: { confirm: 'Are you sure?' }, data: { toggle: "tooltip", placement: "top" }, title: "Delete this record") do
-      tag.i(class: "bi bi-trash-fill")
-    end
-  end
-
-  def create_new_action_button(model_name, icon_class_name="plus")
-    unless current_member.member?
-      url = "/#{model_name.tableize}/new"
-
-      button_to url, class: "btn btn-info btn-sm m-1", disabled: disabled, data: { toggle: "tooltip", placement: "top" }, title: "Add a new #{model_name}" do
-        tag.i(class: "bi bi-#{icon_class_name}") + " " + model_name
+    if commands.include?("s")
+      actions << button_to(url, class: "btn btn-success btn-sm m-1", method: :get, data: { toggle: "tooltip", placement: "top" }, title: "Display this record") do
+        concat tag.i(class: "bi bi-search")
+        concat hidden_field_tag(vars[0].to_sym, vars[1]) unless vars.empty?
       end
     end
+
+    if commands.include?("e")
+      actions << button_to("#{url}/edit", class: "btn btn-primary btn-sm m-1", method: :get, data: { toggle: "tooltip", placement: "top" }, title: "Edit this record") do
+        concat tag.i(class: "bi bi-pencil-fill")
+        concat hidden_field_tag(vars[0].to_sym, vars[1]) unless vars.empty?
+      end
+    end
+
+    if commands.include?("d")
+      actions << button_to(url, class: "btn btn-danger btn-sm m-1", method: :get, method: :delete, data: { confirm: 'Are you sure?' }, data: { toggle: "tooltip", placement: "top" }, title: "Delete this record") do
+        concat tag.i(class: "bi bi-trash-fill")
+        concat hidden_field_tag(vars[0].to_sym, vars[1]) unless vars.empty?
+      end
+    end
+
+    actions.join().html_safe
   end
 
+  def create_new_action_button(model_name, icon_class_name="plus", vars=[])
+    url = "/#{model_name.tableize}/new"
+
+    button_to url, class: "btn btn-success mb-1", method: :get, data: { toggle: "tooltip", placement: "top" }, title: "Add a new #{model_name}" do
+      concat tag.i(class: "bi bi-#{icon_class_name}") + " " + model_name
+      concat hidden_field_tag(vars[0].to_sym, vars[1]) unless vars.empty?
+    end
+  end
 
 end

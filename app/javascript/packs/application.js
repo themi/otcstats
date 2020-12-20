@@ -7,18 +7,15 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-// import "bootstrap"
-const bootstrap = require('bootstrap')
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
+import "bootstrap"
 
-  var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-  var toastList = toastElList.map(function (toastEl) {
-    return new bootstrap.Toast(toastEl)
-  })
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+  $('[data-toggle="popover"]').popover();
+  $('.toast').toast('show', { autohide: true, delay: 3000 });
 })

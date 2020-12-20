@@ -1,10 +1,13 @@
 class StatisticsController < ApplicationController
   before_action :set_statistic, only: [:show, :edit, :update, :destroy]
+  before_action :set_graph
 
   # GET /statistics
   # GET /statistics.json
   def index
-    @statistics = Statistic.all
+    @statistics = Statistic.where(graph_id: @graph.id).
+      where(added_by_id: current_member.id).
+      where(week_ending_at: Time.current.production_end_of_week.to_date)
   end
 
   # GET /statistics/1
@@ -14,7 +17,13 @@ class StatisticsController < ApplicationController
 
   # GET /statistics/new
   def new
-    @statistic = Statistic.new
+    attrs = {
+      graph_id: @graph.id,
+      organisation_id: current_member.organisation.id,
+      added_by_id: current_member.id,
+      week_ending_at: Time.current.production_end_of_week.to_date
+    }
+    @statistic = Statistic.new(attrs)
   end
 
   # GET /statistics/1/edit
@@ -28,7 +37,7 @@ class StatisticsController < ApplicationController
 
     respond_to do |format|
       if @statistic.save
-        format.html { redirect_to @statistic, notice: 'Statistic was successfully created.' }
+        format.html { redirect_to new_statistic_path(graph_id: @graph.id), notice: 'Statistic was successfully created.' }
         format.json { render :show, status: :created, location: @statistic }
       else
         format.html { render :new }
@@ -42,7 +51,7 @@ class StatisticsController < ApplicationController
   def update
     respond_to do |format|
       if @statistic.update(statistic_params)
-        format.html { redirect_to @statistic, notice: 'Statistic was successfully updated.' }
+        format.html { redirect_to statistics_path(graph_id: @graph.id), notice: 'Statistic was successfully updated.' }
         format.json { render :show, status: :ok, location: @statistic }
       else
         format.html { render :edit }
@@ -56,19 +65,28 @@ class StatisticsController < ApplicationController
   def destroy
     @statistic.destroy
     respond_to do |format|
-      format.html { redirect_to statistics_url, notice: 'Statistic was successfully destroyed.' }
+      format.html { redirect_to statistics_url(graph_id: @graph.id), notice: 'Statistic was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_graph
+      g_id = if params[:statistic]
+        statistic_params[:graph_id]
+      elsif params[:graph_id]
+        params[:graph_id]
+      end
+      @graph = Graph.find(g_id)
+    end
+
     def set_statistic
       @statistic = Statistic.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def statistic_params
-      params.require(:statistic).permit(:organisation_id, :graph_id, :added_by, :week_ending_at, :value, :fact_column_1, :fact_column_2, :fact_column_3, :fact_column_4)
+      params.require(:statistic).permit(:organisation_id, :graph_id, :added_by_id, :week_ending_at, :value, :fact_column_1, :fact_column_2, :fact_column_3, :fact_column_4)
     end
 end
