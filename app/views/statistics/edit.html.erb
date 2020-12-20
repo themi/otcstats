@@ -1,8 +1,11 @@
 <div class="container">
-  <h1>Editing Statistic</h1>
+
+  <%= tag.h1 data: { toggle: "tooltip", placement: "top" }, title: @graph.defintion do %>
+    Edit <%= @graph %><small class="text-muted"> - <%= current_member %>, <%= current_member.organisation %></small>
+  <% end %>
 
   <%= render 'form', statistic: @statistic %>
 
-  <%= link_to 'Show', statistic_path(@statistic, graph_id: @graph.id), class: "btn btn-primary"  %> |
-  <%= link_to 'Back', statistics_path(graph_id: @graph.id), class: "btn btn-info"  %>
+  <%= link_to 'Show', statistic_path(@statistic, graph_id: @graph.id), class: "btn btn-primary mb-1"  %> |
+  <%= link_to 'Back', statistics_path(graph_id: @graph.id), class: "btn btn-info mb-1"  %>
 </div>

@@ -1,7 +1,8 @@
 <div class="container">
 
-
-  <h1>Add <%= @graph %><small class="text-muted"> - <%= current_member %>, <%= current_member.organisation %></small></h1>
+  <%= tag.h1 data: { toggle: "tooltip", placement: "top" }, title: @graph.defintion do %>
+    Add <%= @graph %><small class="text-muted"> - <%= current_member %>, <%= current_member.organisation %></small>
+  <% end %>
 
   <%= render 'form', statistic: @statistic %>
 

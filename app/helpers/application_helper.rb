@@ -2,11 +2,11 @@ module ApplicationHelper
   def notice_alert_color(type)
     case type
     when :notice
-      "info"
+      "success"
     when :alert
       "danger"
     else
-      "secondary"
+      "info"
     end
   end
 

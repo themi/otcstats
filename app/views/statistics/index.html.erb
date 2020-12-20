@@ -1,7 +1,7 @@
 <div class="container">
-  <p id="notice"><%= notice %></p>
-
-  <h1><%= @graph %><small class="text-muted"> - <%= current_member %>, <%= current_member.organisation %></small></h1>
+  <%= tag.h1 data: { toggle: "tooltip", placement: "top" }, title: @graph.defintion do %>
+    <%= @graph %><small class="text-muted"> - <%= current_member %>, <%= current_member.organisation %></small>
+  <% end %>
 
   <caption>
 
