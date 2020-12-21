@@ -21,7 +21,7 @@ RSpec.describe "graphs/edit", type: :view do
 
       assert_select "input[name=?]", "graph[short_name]"
 
-      assert_select "input[name=?]", "graph[defintion]"
+      assert_select "input[name=?]", "graph[definition]"
 
       assert_select "input[name=?]", "graph[value_title]"
 

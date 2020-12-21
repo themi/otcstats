@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_12_17_114852) do
     t.string "name"
     t.integer "item_number"
     t.string "short_name"
-    t.string "defintion"
+    t.string "definition"
     t.string "value_title"
     t.string "field_titles"
     t.string "envisage_key"

@@ -5,7 +5,7 @@ class CreateGraphs < ActiveRecord::Migration[6.1]
       t.string :name
       t.integer :item_number
       t.string :short_name
-      t.string :defintion
+      t.string :definition
       t.string :value_title
       t.string :field_titles
       t.string :envisage_key

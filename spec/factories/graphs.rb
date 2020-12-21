@@ -4,7 +4,7 @@
 #
 #  id              :bigint           not null, primary key
 #  active_state    :integer          default("normal"), not null
-#  defintion       :string
+#  definition      :string
 #  envisage_key    :string
 #  field_titles    :string
 #  item_number     :integer
@@ -29,7 +29,7 @@ FactoryBot.define do
     name                    { FFaker::Lorem.words }
     sequence(:item_number)  { |n| n }
     short_name              { FFaker::Lorem.word }
-    defintion               { FFaker::Lorem.sentence }
+    definition               { FFaker::Lorem.sentence }
     value_title             { "ea" }
     field_titles            { "COL1|COL2|COL3" }
   end

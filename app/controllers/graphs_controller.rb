@@ -69,6 +69,6 @@ class GraphsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def graph_params
-      params.require(:graph).permit(:organisation_id, :name, :item_number, :short_name, :defintion, :value_title, :field_titles, :envisage_key)
+      params.require(:graph).permit(:organisation_id, :name, :item_number, :short_name, :definition, :value_title, :field_titles, :envisage_key)
     end
 end

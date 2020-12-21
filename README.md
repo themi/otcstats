@@ -43,13 +43,13 @@ t.string     :envisage_key
 ```
 rails destroy scaffold Graph
 
-rails g scaffold Graph organisation:belongs_to name item_number:integer short_name defintion value_title field_titles envisage_key active_state:integer
+rails g scaffold Graph organisation:belongs_to name item_number:integer short_name definition value_title field_titles envisage_key active_state:integer
 
 t.belongs_to :organisation
 t.string :name
 t.integer :item_number
 t.string :short_name
-t.string :defintion
+t.string :definition
 t.string :value_title
 t.string :field_titles
 t.string :envisage_key

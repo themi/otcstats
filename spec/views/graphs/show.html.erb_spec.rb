@@ -9,7 +9,7 @@ RSpec.describe "graphs/show", type: :view do
       name: "GRAPH_NAME",
       item_number: 1,
       short_name: "GRAPH_SHORT_NAME",
-      defintion: "GRAPH_DEFINITION",
+      definition: "GRAPH_DEFINITION",
       value_title: "GRAPH_VALUE_TITLE",
       field_titles: "GRAPH_COLUMN1",
       envisage_key: "GRAPH_EKEY"

@@ -13,7 +13,7 @@ namespace :dbmaint do
           r.name = row[:name]
           r.active_state = row[:active_state]
           r.short_name = row[:short_name]
-          r.defintion = row[:defintion]
+          r.definition = row[:definition]
           r.value_title = row[:value_title]
           r.field_titles = row[:field_titles] if row[:field_titles]
         end

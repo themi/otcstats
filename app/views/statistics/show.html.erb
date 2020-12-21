@@ -1,17 +1,17 @@
 <div class="container">
   <p>
     <strong>Organisation:</strong>
-    <%= @statistic.organisation_id %>
+    <%= @statistic.organisation.to_s %>
   </p>
 
   <p>
     <strong>Graph:</strong>
-    <%= @statistic.graph_id %>
+    <%= @statistic.graph.to_s %>
   </p>
 
   <p>
     <strong>Added by:</strong>
-    <%= @statistic.added_by %>
+    <%= @statistic.added_by.to_s %>
   </p>
 
   <p>

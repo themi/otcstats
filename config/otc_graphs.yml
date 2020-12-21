@@ -6,7 +6,7 @@ default: &default
     item_number: 1
     organisation: "OTC ANZO"
     short_name: "Bridge Steps"
-    defintion: "This includes all starts on a paid major or minor service, training and processing, including any course on the Golden Age of Knowledge Routes, at a mission or org or Advanced Org brought about by the OT Committee or an OTC Member. Refreshers do not count."
+    definition: "This includes all starts on a paid major or minor service, training and processing, including any course on the Golden Age of Knowledge Routes, at a mission or org or Advanced Org brought about by the OT Committee or an OTC Member. Refreshers do not count."
     value_title: "ea"
     field_titles: "Name|Service|Org|OTC Member"
   - name: "Value of Funds Paid or Raised for your Ideal Org that week"
@@ -14,7 +14,7 @@ default: &default
     item_number: 2
     organisation: "OTC ANZO"
     short_name: "Funds Raised"
-    defintion: "The funds must be invoiced at the local org. Pledged amounts do not count. Note: IAS funds are reported separately."
+    definition: "The funds must be invoiced at the local org. Pledged amounts do not count. Note: IAS funds are reported separately."
     value_title: "Donated or Raised"
     field_titles: "Name|Org|OTC Member"
   - name: "Value of Funds Paid or Raised for other Orgs as an Alliance activity"
@@ -22,7 +22,7 @@ default: &default
     item_number: 3
     organisation: "OTC ANZO"
     short_name: "Alliance Funds Raised"
-    defintion: "These are funds raised as a result of an Alliance event held. The funds must have been invoiced in the Alliance org. Pledged amounts do not count. It includes all funds raised or paid by the OT Committee members themselves. Note: IAS funds are reported separately."
+    definition: "These are funds raised as a result of an Alliance event held. The funds must have been invoiced in the Alliance org. Pledged amounts do not count. It includes all funds raised or paid by the OT Committee members themselves. Note: IAS funds are reported separately."
     value_title: "Donated or Raised"
     field_titles: "Name|Org|OTC Member"
   - name: "Total number of OT Ambassadors and OT Committee members"
@@ -30,14 +30,14 @@ default: &default
     item_number: 4
     organisation: "OTC ANZO"
     short_name: "Members"
-    defintion: "This is the total number of OT Ambassadors and OT Committee members on your OT Committee."
+    definition: "This is the total number of OT Ambassadors and OT Committee members on your OT Committee."
     value_title: "Total"
   - name: "Number of Active OT Ambassadors and OT Committee Members this week"
     active_state: 0
     item_number: 5
     organisation: "OTC ANZO"
     short_name: "Active Members"
-    defintion: "An Active OT Ambassador or OT Committee Member is someone who is part of the OT Committee and has worked on OT Ambassador Program activities and/or OT Committee Projects or Team this week. Public working on 4D campaigns are not included as those activities are not part of the OT Ambassador Program)."
+    definition: "An Active OT Ambassador or OT Committee Member is someone who is part of the OT Committee and has worked on OT Ambassador Program activities and/or OT Committee Projects or Team this week. Public working on 4D campaigns are not included as those activities are not part of the OT Ambassador Program)."
     value_title: "Active"
     field_titles: "Name|Project or Post"
   - name: "Number of OT Committee members attending the weekly OT Committee meeting in their org."
@@ -45,14 +45,14 @@ default: &default
     item_number: 6
     organisation: "OTC ANZO"
     short_name: "Attendance"
-    defintion: "This is the total number of OT Ambassadors and OT Committee members who are members of the local OT Committee and have attended the OT Committee meeting that week."
+    definition: "This is the total number of OT Ambassadors and OT Committee members who are members of the local OT Committee and have attended the OT Committee meeting that week."
     value_title: "Total"
   - name: "Number of Events held per the OT Ambassador Program."
     active_state: 0
     item_number: 7
     organisation: "OTC ANZO"
     short_name: "Events"
-    defintion: "These are events that pertain to the OT Ambassador Program: they include Ideal Org fundraising dinners, fundraising events, Bridge Enlightenment Nights, Seminars, etc. The I/C of the event is responsible for reporting the event and filling out the report form on the event."
+    definition: "These are events that pertain to the OT Ambassador Program: they include Ideal Org fundraising dinners, fundraising events, Bridge Enlightenment Nights, Seminars, etc. The I/C of the event is responsible for reporting the event and filling out the report form on the event."
     value_title: "ea"
     field_titles: "Event|Products|I/C"
   - name: "Number of Books Sold to Raw Public"
@@ -60,14 +60,14 @@ default: &default
     item_number: 8
     organisation: "OTC ANZO"
     short_name: "Books Sold"
-    defintion: "(This could be DMSMH or Self Analysis or any other Basic book sold while doing dissemination activities, stress tests etc. Note that this stat would NOT include pamphlets sold such as the VM Booklets)"
+    definition: "(This could be DMSMH or Self Analysis or any other Basic book sold while doing dissemination activities, stress tests etc. Note that this stat would NOT include pamphlets sold such as the VM Booklets)"
     value_title: "Total Sold"
   - name: "Total Volunteer Hours on OT Projects per the OT Ambassador Program."
     active_state: 0
     item_number: 9
     organisation: "OTC ANZO"
     short_name: "Volunteer Hours"
-    defintion: "These include hours spent on production and Central Files by OT Committee members or OT Committee project members. Note: The projects must be based on the targets of the OT Ambassador Program."
+    definition: "These include hours spent on production and Central Files by OT Committee members or OT Committee project members. Note: The projects must be based on the targets of the OT Ambassador Program."
     value_title: "Hours"
     field_titles: "Project or Post|OTC/Project Member"
   - name: "Number of Volunteers working on Files Projects"
@@ -75,7 +75,7 @@ default: &default
     item_number: 10
     organisation: "OTC ANZO"
     short_name: "Files Project"
-    defintion: "This includes volunteers who are not OT Committee Members, such as students or volunteers from other areas who come to help."
+    definition: "This includes volunteers who are not OT Committee Members, such as students or volunteers from other areas who come to help."
     value_title: "ea"
     field_titles: "Project|Volunteer"
   - name: "Number of People Assisted to Join Staff"
@@ -83,7 +83,7 @@ default: &default
     item_number: 11
     organisation: "OTC ANZO"
     short_name: "Joined Staff"
-    defintion: "This would be anyone who joins staff from a Recruitment Event held by the OT Committee or by someone brought into the org to be recruited."
+    definition: "This would be anyone who joins staff from a Recruitment Event held by the OT Committee or by someone brought into the org to be recruited."
     value_title: "ea"
     field_titles: "Name|Org|OTC Member"
   - name: "Compliance Reports on the OT Ambassador Program and OT Projects."
@@ -91,14 +91,14 @@ default: &default
     item_number: 12
     organisation: "OTC ANZO"
     short_name: "Compliance Reports"
-    defintion: "Definition: This is the total number of targets done with compliance reports on the OT Ambassador Program and the OT projects done by the OT Committee as per the OT Ambassador Program."
+    definition: "Definition: This is the total number of targets done with compliance reports on the OT Ambassador Program and the OT projects done by the OT Committee as per the OT Ambassador Program."
     value_title: "Total"
   - name: "Funds Raised for the IAS in US$."
     active_state: 0
     item_number: 13
     organisation: "OTC ANZO"
     short_name: "IAS"
-    defintion: "(Includes all funds raised or paid by the OT Committee members to the IAS.)"
+    definition: "(Includes all funds raised or paid by the OT Committee members to the IAS.)"
     value_title: "Donated or Raised"
     field_titles: "Name|OTC Member"
 

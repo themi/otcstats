@@ -4,7 +4,7 @@
 #
 #  id              :bigint           not null, primary key
 #  active_state    :integer          default("normal"), not null
-#  defintion       :string
+#  definition      :string
 #  envisage_key    :string
 #  field_titles    :string
 #  item_number     :integer

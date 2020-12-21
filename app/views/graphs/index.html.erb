@@ -29,7 +29,7 @@
         <td><%= graph.short_name %></td>
         <td><%= graph.name %></td>
         <% unless browser_object.is_mobile? %>
-        <td><%= graph.defintion %></td>
+        <td><%= graph.definition %></td>
         <% end %>
         <td>
           <%= number_with_precision stats_total_for(Time.previous_eow, graph), precision: 0 %>
