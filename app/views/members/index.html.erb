@@ -19,8 +19,8 @@
     <tbody>
       <% @members.each do |member| %>
         <tr>
-          <th scope="row"><%= member.full_name %></td>
-          <td><%= member.organisation_id %></td>
+          <td scope="row"><%= member.full_name %></td>
+          <td><%= member.organisation.to_s %></td>
           <td><%= member.role %></td>
           <td><%= member.phone %></td>
           <td><%= member.address %></td>

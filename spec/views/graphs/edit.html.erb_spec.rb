@@ -1,25 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe "graphs/edit", type: :view do
+  let(:member) { create(:member) }
+
   before(:each) do
-    @graph = assign(:graph, Graph.create!(
-      organisation: nil,
-      name: "MyString",
-      item_number: 1,
-      short_name: "MyString",
-      defintion: "MyString",
-      value_title: "MyString",
-      field_titles: "MyString",
-      envisage_key: "MyString"
-    ))
+    @graph = assign(:graph, create(:graph))
   end
 
   it "renders the edit graph form" do
+    sign_in member
     render
 
     assert_select "form[action=?][method=?]", graph_path(@graph), "post" do
 
-      assert_select "input[name=?]", "graph[organisation_id]"
+      assert_select "select[name=?]", "graph[organisation_id]"
 
       assert_select "input[name=?]", "graph[name]"
 

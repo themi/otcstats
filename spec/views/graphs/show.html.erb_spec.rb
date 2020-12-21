@@ -1,28 +1,31 @@
 require 'rails_helper'
 
 RSpec.describe "graphs/show", type: :view do
+  let(:member) { create(:member) }
+
   before(:each) do
-    @graph = assign(:graph, Graph.create!(
-      organisation: nil,
-      name: "Name",
-      item_number: 2,
-      short_name: "Short Name",
-      defintion: "Defintion",
-      value_title: "Value Title",
-      field_titles: "Field Titles",
-      envisage_key: "Envisage Key"
+    @graph = assign(:graph, create(:graph,
+      organisation: create(:organisation, name: "ORG_NAME"),
+      name: "GRAPH_NAME",
+      item_number: 1,
+      short_name: "GRAPH_SHORT_NAME",
+      defintion: "GRAPH_DEFINITION",
+      value_title: "GRAPH_VALUE_TITLE",
+      field_titles: "GRAPH_COLUMN1",
+      envisage_key: "GRAPH_EKEY"
     ))
   end
 
   it "renders attributes in <p>" do
+    sign_in member
     render
-    expect(rendered).to match(//)
-    expect(rendered).to match(/Name/)
-    expect(rendered).to match(/2/)
-    expect(rendered).to match(/Short Name/)
-    expect(rendered).to match(/Defintion/)
-    expect(rendered).to match(/Value Title/)
-    expect(rendered).to match(/Field Titles/)
-    expect(rendered).to match(/Envisage Key/)
+    expect(rendered).to match(/ORG_NAME/)
+    expect(rendered).to match(/GRAPH_NAME/)
+    expect(rendered).to match(/1/)
+    expect(rendered).to match(/GRAPH_SHORT_NAME/)
+    expect(rendered).to match(/GRAPH_DEFINITION/)
+    expect(rendered).to match(/GRAPH_VALUE_TITLE/)
+    expect(rendered).to match(/GRAPH_COLUMN1/)
+    expect(rendered).to match(/GRAPH_EKEY/)
   end
 end

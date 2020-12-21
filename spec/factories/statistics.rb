@@ -17,8 +17,10 @@
 #
 # Indexes
 #
+#  index_statistics_on_added_by_id      (added_by_id)
 #  index_statistics_on_graph_id         (graph_id)
 #  index_statistics_on_organisation_id  (organisation_id)
+#  index_statistics_on_week_ending_at   (week_ending_at)
 #
 # Foreign Keys
 #
@@ -27,14 +29,14 @@
 #
 FactoryBot.define do
   factory :statistic do
-    organisation { nil }
-    graph { nil }
-    added_by { 1 }
-    week_ending_at { "2020-12-17 22:48:52" }
-    value { 1.5 }
-    fact_column_1 { "MyString" }
-    fact_column_2 { "MyString" }
-    fact_column_3 { "MyString" }
-    fact_column_4 { "MyString" }
+    organisation
+    graph
+    added_by       { create(:member) }
+    week_ending_at { "2020-12-17" }
+    value          { 1 }
+    fact_column_1  { "COL1" }
+    fact_column_2  { "COL2" }
+    fact_column_3  { "COL3" }
+    fact_column_4  { "COL4" }
   end
 end

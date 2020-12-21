@@ -30,4 +30,20 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  boolean_values:
+    true: Yes
+    false: No
+
+  date:
+    formats:
+      default: "%e/%_m/%Y"
+      long: "%A %e %B %Y"
+      short: "%e %b"
+      we: "%-d/%-m"
+
+  time:
+    formats:
+      default: "%e/%_m/%Y %I:%M%p"
+      long: "%A %e %B %Y %I:%M%p"
+      short: "%e %b %I:%M%p"
+      we: "%-d/%-m"

@@ -70,8 +70,10 @@ ActiveRecord::Schema.define(version: 2020_12_17_114852) do
     t.string "fact_column_4"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["added_by_id"], name: "index_statistics_on_added_by_id"
     t.index ["graph_id"], name: "index_statistics_on_graph_id"
     t.index ["organisation_id"], name: "index_statistics_on_organisation_id"
+    t.index ["week_ending_at"], name: "index_statistics_on_week_ending_at"
   end
 
   add_foreign_key "graphs", "organisations"

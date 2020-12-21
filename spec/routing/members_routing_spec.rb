@@ -18,10 +18,10 @@ RSpec.describe MembersController, type: :routing do
       expect(get: "/members/1/edit").to route_to("members#edit", id: "1")
     end
 
-
-    it "routes to #create" do
-      expect(post: "/members").to route_to("members#create")
-    end
+    # hmmmm clashes with devise
+    # it "routes to #create" do
+    #   expect(post: "/members").to route_to("members#create")
+    # end
 
     it "routes to #update via PUT" do
       expect(put: "/members/1").to route_to("members#update", id: "1")

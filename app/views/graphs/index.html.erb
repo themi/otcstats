@@ -1,5 +1,5 @@
 <div class="container">
-<h1>Statistics <small class="text-muted"> for <%= Time.current.production_end_of_week.strftime("%d/%m") %></small></h1>
+<h1>Statistics <small class="text-muted"> (<%= I18n.l(Time.current_eow, format: :we) %>)</small></h1>
 
 <table class="table">
   <thead>
@@ -13,7 +13,8 @@
       <% unless browser_object.is_mobile? %>
       <th scope="col">Defintion</th>
       <% end %>
-      <th scope="col"><%= current_member.member? ? "My" : "" %> Total</th>
+      <th scope="col"><%= I18n.l(Time.previous_eow, format: :we) %></th>
+      <th scope="col"><%= I18n.l(Time.current_eow, format: :we) %></th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -23,7 +24,7 @@
       <tr>
         <th scope="row"><%= graph.item_number %></td>
         <% unless browser_object.is_mobile? %>
-        <td><%= graph.organisation %></td>
+        <td><%= graph.organisation.to_s %></td>
         <% end %>
         <td><%= graph.short_name %></td>
         <td><%= graph.name %></td>
@@ -31,11 +32,10 @@
         <td><%= graph.defintion %></td>
         <% end %>
         <td>
-          <% if current_member.member? %>
-            <%= Statistic.my_total_stats(graph.id, current_member.id) %>
-          <% else %>
-            <%= Statistic.total_stats(graph.id) %>
-          <% end %>
+          <%= number_with_precision stats_total_for(Time.previous_eow, graph), precision: 0 %>
+        </td>
+        <td>
+          <%= number_with_precision stats_total_for(Time.current_eow, graph), precision: 0 %>
         </td>
         <td><%= graph_action_buttons(graph) %></td>
       </tr>

@@ -10,8 +10,16 @@ module ApplicationHelper
     end
   end
 
+  def stats_total_for(eow, graph)
+    if current_member.member?
+      Statistic.my_total_stats(eow, graph.id, current_member.id)
+    else
+      Statistic.total_stats(eow, graph.id)
+    end
+  end
+
   def render_statistic(stat)
-    "stuff about stuff"
+    "#{stat}: #{stat.value}"
   end
 
   def render_graph_field_titles(graph)
@@ -57,7 +65,7 @@ module ApplicationHelper
     end
 
     if commands.include?("d")
-      actions << button_to(url, class: "btn btn-danger btn-sm m-1", method: :get, method: :delete, data: { confirm: 'Are you sure?' }, data: { toggle: "tooltip", placement: "top" }, title: "Delete this record") do
+      actions << button_to(url, class: "btn btn-danger btn-sm m-1", method: :delete, data: { confirm: 'Are you sure?', toggle: "tooltip", placement: "top" }, title: "Delete this record") do
         concat tag.i(class: "bi bi-trash-fill")
         concat hidden_field_tag(vars[0].to_sym, vars[1]) unless vars.empty?
       end

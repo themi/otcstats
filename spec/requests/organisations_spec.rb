@@ -16,11 +16,11 @@ RSpec.describe "/organisations", type: :request do
   # Organisation. As you add validations to Organisation, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { name: "NAME", envisage_key: "EKEY"}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { name: nil }
   }
 
   describe "GET /index" do

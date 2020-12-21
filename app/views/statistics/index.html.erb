@@ -21,8 +21,8 @@
     <tbody>
       <% @statistics.each do |statistic| %>
         <tr>
-          <td><%= statistic.week_ending_at %></td>
-          <td><%= statistic.value %></td>
+          <td><%= I18n.l(statistic.week_ending_at) %></td>
+          <td><%= number_with_precision statistic.value, precision: 0 %></td>
           <% statistic.field_titles_array.each_with_index do |title, index| %>
             <td><%= statistic.send("fact_column_#{index+1}") %></td>
           <% end %>

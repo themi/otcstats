@@ -1,7 +1,7 @@
 <div class="container">
   <p>
     <strong>Organisation:</strong>
-    <%= @member.organisation_id %>
+    <%= @member.organisation.to_s %>
   </p>
 
   <p>
@@ -12,6 +12,11 @@
   <p>
     <strong>Full name:</strong>
     <%= @member.full_name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @member.email %>
   </p>
 
   <p>

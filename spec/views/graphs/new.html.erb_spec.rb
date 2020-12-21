@@ -1,25 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe "graphs/new", type: :view do
+  let(:member) { create(:member) }
+
   before(:each) do
-    assign(:graph, Graph.new(
-      organisation: nil,
-      name: "MyString",
-      item_number: 1,
-      short_name: "MyString",
-      defintion: "MyString",
-      value_title: "MyString",
-      field_titles: "MyString",
-      envisage_key: "MyString"
-    ))
+    assign(:graph, build(:graph))
   end
 
   it "renders new graph form" do
+    sign_in member
     render
 
     assert_select "form[action=?][method=?]", graphs_path, "post" do
 
-      assert_select "input[name=?]", "graph[organisation_id]"
+      assert_select "select[name=?]", "graph[organisation_id]"
 
       assert_select "input[name=?]", "graph[name]"
 

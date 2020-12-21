@@ -26,5 +26,20 @@
 require 'rails_helper'
 
 RSpec.describe Graph, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:graph) { create(:graph) }
+
+  it "active_state defaults to normal" do
+    expect(graph.active_state).to eq "normal"
+  end
+
+  it "to_s returns short name" do
+    expect(graph.to_s).to eq graph.short_name
+  end
+
+  context "#get_field_title_for" do
+    subject(:action) { graph.get_field_title_for(1) }
+    it "returns the correct FieldTitle" do
+      expect(action).to eq "COL2"
+    end
+  end
 end

@@ -10,7 +10,6 @@
 #
 FactoryBot.define do
   factory :organisation do
-    name { "MyString" }
-    envisage_key { "MyString" }
+    name { FFaker::Lorem.words }
   end
 end

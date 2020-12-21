@@ -17,8 +17,10 @@
 #
 # Indexes
 #
+#  index_statistics_on_added_by_id      (added_by_id)
 #  index_statistics_on_graph_id         (graph_id)
 #  index_statistics_on_organisation_id  (organisation_id)
+#  index_statistics_on_week_ending_at   (week_ending_at)
 #
 # Foreign Keys
 #
@@ -30,27 +32,27 @@ class Statistic < ApplicationRecord
   belongs_to :graph
   belongs_to :added_by, class_name: "Member"
 
-  scope :my_recent, ->(graph_id, member_id) {
+  scope :my_recent, ->(eow, graph_id, member_id) {
     where(graph_id: graph_id).
     where(added_by_id: member_id).
-    where(week_ending_at: Time.current.production_end_of_week.to_date)
+    where(week_ending_at: eow)
   }
 
-  scope :recent, ->(graph_id) {
+  scope :recent, ->(eow, graph_id) {
     where(graph_id: graph_id).
-    where(week_ending_at: Time.current.production_end_of_week.to_date)
+    where(week_ending_at: eow)
   }
 
-  def self.total_stats(graph_id)
-    self.recent(graph_id).sum(:value)
+  def self.total_stats(eow, graph_id)
+    self.recent(eow, graph_id).sum(:value)
   end
 
-  def self.my_total_stats(graph_id, member_id)
-    self.my_recent(graph_id, member_id).sum(:value)
+  def self.my_total_stats(eow, graph_id, member_id)
+    self.my_recent(eow, graph_id, member_id).sum(:value)
   end
 
   def to_s
-    self.graph
+    self.graph.to_s
   end
 
   def value_title

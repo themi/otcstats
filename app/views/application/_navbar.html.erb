@@ -1,11 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">OTC Stats</a>
+  <a class="navbar-brand" href="/">OTC</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
       <%= render 'navbar_maintainer_menu' %>
+      <li class="nav-item">
+        <%= link_to graphs_path, class: "nav-link" do %>
+          <i class="bi bi-clipboard-data"></i>
+          Start Here!
+        <% end %>
+      </li>
     </ul>
     <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
       <%= render 'navbar_member_menu' %>

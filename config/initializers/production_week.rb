@@ -88,8 +88,12 @@ class Time
       @production_day_of_week = Concurrent::ThreadLocalVar.new(value)
     end
 
-    def weekly(time_format="%Y%m%d-%H%M")
-      self.current.production_end_of_week.strftime(time_format)
+    def current_eow
+      current.production_end_of_week
+    end
+
+    def previous_eow
+      (current - 7.days).production_end_of_week
     end
   end
 end

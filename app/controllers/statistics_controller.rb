@@ -6,9 +6,9 @@ class StatisticsController < ApplicationController
   # GET /statistics.json
   def index
     if current_member.member?
-      @statistics = Statistic.my_recent(@graph.id, current_member.id)
+      @statistics = Statistic.my_recent(Time.current_eow, @graph.id, current_member.id)
     else
-      @statistics = Statistic.recent(@graph.id)
+      @statistics = Statistic.recent(Time.current_eow, @graph.id)
     end
   end
 

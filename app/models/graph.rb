@@ -48,6 +48,6 @@ class Graph < ApplicationRecord
   private
 
   def set_default_active_state
-    self.active_state ||= :member
+    self.active_state ||= :normal
   end
 end
