@@ -9,6 +9,9 @@
 #  updated_at   :datetime         not null
 #
 class Organisation < ApplicationRecord
+
+  validates :name, presence: true
+
   def to_s
     self.name
   end

@@ -43,13 +43,18 @@ class Statistic < ApplicationRecord
     where(week_ending_at: eow)
   }
 
-  def self.total_stats(eow, graph_id)
-    self.recent(eow, graph_id).sum(:value)
+  class << self
+    def total_stats(eow, graph_id)
+      self.recent(eow, graph_id).sum(:value)
+    end
+
+    def my_total_stats(eow, graph_id, member_id)
+      self.my_recent(eow, graph_id, member_id).sum(:value)
+    end
   end
 
-  def self.my_total_stats(eow, graph_id, member_id)
-    self.my_recent(eow, graph_id, member_id).sum(:value)
-  end
+  validates :value, :week_ending_at, presence: true
+
 
   def to_s
     self.graph.to_s
@@ -66,7 +71,5 @@ class Statistic < ApplicationRecord
   def get_field_title_for(index)
     self.graph.get_field_title_for(index)
   end
-
-  private
 
 end

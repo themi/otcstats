@@ -29,6 +29,8 @@ class Graph < ApplicationRecord
   enum active_state: [:normal, :restricted, :closed]
   after_initialize :set_default_active_state, if: :new_record?
 
+  validates :name, :value_title, presence: true
+
   def to_s
     self.short_name
   end
