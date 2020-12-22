@@ -2,6 +2,8 @@
 default: &default
   otc_graphs:
   - name: "Total Number of Bridge Steps taken at a Mission, Org or Sea Org Org"
+    envisage_key: 'graj4zzdleh'
+    envisage_name: ""
     active_state: 0
     item_number: 1
     organisation: "OTC ANZO"
@@ -10,6 +12,8 @@ default: &default
     value_title: "ea"
     field_titles: "Name|Service|Org|OTC Member"
   - name: "Value of Funds Paid or Raised for your Ideal Org that week"
+    envisage_key: 'grakqfsg9r5'
+    envisage_name: ""
     active_state: 1
     item_number: 2
     organisation: "OTC ANZO"
@@ -18,6 +22,8 @@ default: &default
     value_title: "Donated or Raised"
     field_titles: "Name|Org|OTC Member"
   - name: "Value of Funds Paid or Raised for other Orgs as an Alliance activity"
+    envisage_key: 'gralb1usych'
+    envisage_name: ""
     active_state: 0
     item_number: 3
     organisation: "OTC ANZO"
@@ -26,6 +32,8 @@ default: &default
     value_title: "Donated or Raised"
     field_titles: "Name|Org|OTC Member"
   - name: "Total number of OT Ambassadors and OT Committee members"
+    envisage_key: 'gradgk1w7nt'
+    envisage_name: ""
     active_state: 1
     item_number: 4
     organisation: "OTC ANZO"
@@ -33,6 +41,8 @@ default: &default
     definition: "This is the total number of OT Ambassadors and OT Committee members on your OT Committee."
     value_title: "Total"
   - name: "Number of Active OT Ambassadors and OT Committee Members this week"
+    envisage_key: 'gracpa98h6h'
+    envisage_name: ""
     active_state: 0
     item_number: 5
     organisation: "OTC ANZO"
@@ -41,6 +51,8 @@ default: &default
     value_title: "Active"
     field_titles: "Name|Project or Post"
   - name: "Number of OT Committee members attending the weekly OT Committee meeting in their org."
+    envisage_key: 'gra2qn6fpt9'
+    envisage_name: ""
     active_state: 0
     item_number: 6
     organisation: "OTC ANZO"
@@ -48,6 +60,8 @@ default: &default
     definition: "This is the total number of OT Ambassadors and OT Committee members who are members of the local OT Committee and have attended the OT Committee meeting that week."
     value_title: "Total"
   - name: "Number of Events held per the OT Ambassador Program."
+    envisage_key: 'graahxdse32'
+    envisage_name: ""
     active_state: 0
     item_number: 7
     organisation: "OTC ANZO"
@@ -56,6 +70,8 @@ default: &default
     value_title: "ea"
     field_titles: "Event|Products|I/C"
   - name: "Number of Books Sold to Raw Public"
+    envisage_key: 'gralr8yr9qh'
+    envisage_name: ""
     active_state: 0
     item_number: 8
     organisation: "OTC ANZO"
@@ -63,6 +79,8 @@ default: &default
     definition: "(This could be DMSMH or Self Analysis or any other Basic book sold while doing dissemination activities, stress tests etc. Note that this stat would NOT include pamphlets sold such as the VM Booklets)"
     value_title: "Total Sold"
   - name: "Total Volunteer Hours on OT Projects per the OT Ambassador Program."
+    envisage_key: 'gra79qgir0p'
+    envisage_name: ""
     active_state: 0
     item_number: 9
     organisation: "OTC ANZO"
@@ -71,6 +89,8 @@ default: &default
     value_title: "Hours"
     field_titles: "Project or Post|OTC/Project Member"
   - name: "Number of Volunteers working on Files Projects"
+    envisage_key: 'gra1yiae97u'
+    envisage_name: ""
     active_state: 1
     item_number: 10
     organisation: "OTC ANZO"
@@ -79,6 +99,8 @@ default: &default
     value_title: "ea"
     field_titles: "Project|Volunteer"
   - name: "Number of People Assisted to Join Staff"
+    envisage_key: 'gra84d2jhph'
+    envisage_name: ""
     active_state: 0
     item_number: 11
     organisation: "OTC ANZO"
@@ -87,13 +109,17 @@ default: &default
     value_title: "ea"
     field_titles: "Name|Org|OTC Member"
   - name: "Compliance Reports on the OT Ambassador Program and OT Projects."
+    envisage_key: 'gras9sdxmj9'
+    envisage_name: ""
     active_state: 1
     item_number: 12
     organisation: "OTC ANZO"
     short_name: "Compliance Reports"
-    definition: "Definition: This is the total number of targets done with compliance reports on the OT Ambassador Program and the OT projects done by the OT Committee as per the OT Ambassador Program."
+    definition: "This is the total number of targets done with compliance reports on the OT Ambassador Program and the OT projects done by the OT Committee as per the OT Ambassador Program."
     value_title: "Total"
   - name: "Funds Raised for the IAS in US$."
+    envisage_key: 'gra6vi5vdu6'
+    envisage_name: ""
     active_state: 0
     item_number: 13
     organisation: "OTC ANZO"

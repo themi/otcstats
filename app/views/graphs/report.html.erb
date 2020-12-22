@@ -1,0 +1,49 @@
+<div class="container">
+
+  <div class="text-center">
+    <h1 class="mt-4">
+    OT Committee Statistics</br>Report Form 2020
+    </h1>
+
+    <h2 class="mt-4">
+      Stat form for <%= @organisation.name %> OT Committee</br>For W/Eing <%= @eow.strftime("%Y-%B-%-d") %>
+    </h2>
+
+  </div>
+
+  <ol class="context">
+    <% @graphs.each do |graph| %>
+      <% statistics = Statistic.recent(@eow, graph.id) %>
+      <li class="mt-4">
+        <h3><span class="badge badge-info"><%= number_with_precision statistics.sum(:value), precision: 0 %></span> <strong><%= graph.name %></strong></h3>
+        <p>Definition: <%= graph.definition %></p>
+        <% unless graph.field_titles_array.empty? %>
+
+          <table class="table table-bordered ">
+            <thead>
+              <tr>
+                <% unless graph.value_title == "ea" %>
+                <th class="p-1 text-center"><%= graph.value_title || "Value" %></th>
+                <% end %>
+                <% graph.field_titles_array.each do |title| %>
+                  <th class="p-1 text-center" scope="col"><%= title %></th>
+                <% end %>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% statistics.each do |statistic| %>
+                <tr>
+                  <% statistic.field_titles_array.each_with_index do |title, index| %>
+                    <td><%= statistic.send("fact_column_#{index+1}") %></td>
+                  <% end %>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+
+</div>

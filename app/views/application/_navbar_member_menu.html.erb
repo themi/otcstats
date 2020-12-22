@@ -1,5 +1,12 @@
 <% if signed_in? %>
 
+  <li class="nav-item">
+    <%= link_to graphs_path, class: "nav-link" do %>
+      <i class="bi bi-clipboard-data"></i>
+      Add Stats
+    <% end %>
+  </li>
+
   <li class="nav-item dropdown">
     <%= link_to destroy_member_session_path, method: :delete, class: "nav-link" do %>
       <i class="bi bi-box-arrow-in-left"></i>

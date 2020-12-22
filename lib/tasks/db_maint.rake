@@ -15,6 +15,7 @@ namespace :dbmaint do
           r.short_name = row[:short_name]
           r.definition = row[:definition]
           r.value_title = row[:value_title]
+          r.envisage_key = row[:envisage_key]
           r.field_titles = row[:field_titles] if row[:field_titles]
         end
       end
@@ -34,7 +35,7 @@ namespace :dbmaint do
           r.phone = row["phone"]
           r.training_level = row["training_level"]
           r.processing_level = row["processing_level"]
-
+          r.envisage_key = row["envisage_key"]
           pass = SecureRandom.base64(12)
           r.password = pass
           r.password_confirmation = pass

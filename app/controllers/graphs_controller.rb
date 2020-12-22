@@ -61,6 +61,13 @@ class GraphsController < ApplicationController
     end
   end
 
+  # GET /graphs/report
+  def report
+    @graphs =  Graph.normal.to_a + Graph.restricted.to_a
+    @organisation = current_member.organisation
+    @eow = Time.current_eow
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_graph

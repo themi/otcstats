@@ -4,16 +4,8 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-      <%= render 'navbar_maintainer_menu' %>
-      <li class="nav-item">
-        <%= link_to graphs_path, class: "nav-link" do %>
-          <i class="bi bi-clipboard-data"></i>
-          Start Here!
-        <% end %>
-      </li>
-    </ul>
     <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+      <%= render 'navbar_maintainer_menu' %>
       <%= render 'navbar_member_menu' %>
     </ul>
   </div>

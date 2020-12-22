@@ -32,3 +32,60 @@ h3, dt, label {
 p, td, li, dd {
   font-size: 2vmin;
 }
+
+.pages.home .container {
+  min-height: 500px;
+}
+
+.graphs.report h1 {
+  font-size: 2.5em;
+}
+
+.graphs.report h2 {
+  font-size: 1.8em;
+}
+
+.graphs.report h3 {
+  font-size: 1em;
+}
+
+.graphs.report td, .graphs.report th {
+  font-size: 0.9em;
+}
+
+.graphs.report p {
+  font-size: 0.7em;
+}
+
+.graphs.report ol {
+  padding: 5px 5px 5px 20px;
+}
+
+.graphs.report ol li {
+  margin: 5px;
+}
+
+
+.graphs.report h1, .graphs.report h3 {
+  color: #009999;
+}
+
+.graphs.report th {
+  background-color: #ffffcc;
+}
+
+
+
+/* override styles when printing */
+@media print {
+
+  body {
+    margin: 0;
+    color: #000;
+    background-color: #fff;
+  }
+
+  nav, footer {
+    display: none;
+  }
+}
