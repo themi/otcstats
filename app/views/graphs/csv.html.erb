@@ -1,0 +1,4 @@
+
+<% CSV.parse(@envisage_csv).each do |row| %>
+<%= sanitize row.join(",") %></br>
+<% end %>

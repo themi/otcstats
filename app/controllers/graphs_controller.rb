@@ -68,6 +68,13 @@ class GraphsController < ApplicationController
     @eow = Time.current_eow
   end
 
+  # GET /graphs/csv
+  def csv
+    graphs =  Graph.normal.to_a + Graph.restricted.to_a
+    eow = Time.current_eow
+    @envisage_csv = ExportStatistics.envisage_csv(eow, graphs)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_graph

@@ -6,6 +6,7 @@
 #  active_state    :integer          default("normal"), not null
 #  definition      :string
 #  envisage_key    :string
+#  envisage_name   :string
 #  field_titles    :string
 #  item_number     :integer
 #  name            :string

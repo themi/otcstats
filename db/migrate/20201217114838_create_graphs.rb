@@ -9,6 +9,7 @@ class CreateGraphs < ActiveRecord::Migration[6.1]
       t.string :value_title
       t.string :field_titles
       t.string :envisage_key
+      t.string :envisage_name
       t.integer :active_state, null: false, default: 0
 
       t.timestamps

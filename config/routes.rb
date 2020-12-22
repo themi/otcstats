@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :graphs do
     collection do
       get 'report'
+      get 'csv'
     end
   end
   resources :members

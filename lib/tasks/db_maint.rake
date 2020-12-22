@@ -10,12 +10,14 @@ namespace :dbmaint do
         org = Organisation.find_or_create_by(name: row[:organisation])
         Graph.find_or_create_by(organisation: org, name: row[:name]) do |r|
           r.item_number = row[:item_number]
+          r.organisation = org
           r.name = row[:name]
           r.active_state = row[:active_state]
           r.short_name = row[:short_name]
           r.definition = row[:definition]
           r.value_title = row[:value_title]
           r.envisage_key = row[:envisage_key]
+          r.envisage_name = row[:envisage_name]
           r.field_titles = row[:field_titles] if row[:field_titles]
         end
       end

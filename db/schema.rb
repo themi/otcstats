@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_12_17_114852) do
     t.string "value_title"
     t.string "field_titles"
     t.string "envisage_key"
+    t.string "envisage_name"
     t.integer "active_state", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
