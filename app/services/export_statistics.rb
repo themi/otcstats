@@ -18,10 +18,9 @@ class ExportStatistics
 
       data_points = []
       all_graphs.each do |graph|
-        buffer = Statistic.recent(eow, graph.id)
         data_points << {
           graph_id: graph.envisage_key,
-          value: buffer.sum(:value)
+          value: Statistic.total_stats(eow, graph.id)
         }
       end
 
@@ -38,8 +37,8 @@ class ExportStatistics
       CSV.generate do |csv|
         csv << ["Graph ID", "Graph Name", eow.strftime("%Y-%B-%-d")]
         all_graphs.each do |graph|
-          buffer = Statistic.recent(eow, graph.id)
-          csv << [graph.envisage_key, eval_envisage_name(graph), buffer.sum(:value)]
+          total = Statistic.total_stats(eow, graph.id)
+          csv << [graph.envisage_key, eval_envisage_name(graph), total]
         end
       end
     end

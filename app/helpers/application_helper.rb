@@ -46,4 +46,8 @@ module ApplicationHelper
     end
   end
 
+  def render_statistic_value(stat)
+    number_with_precision(stat.value, precision: 0) + "#{stat.currency}"
+  end
+
 end

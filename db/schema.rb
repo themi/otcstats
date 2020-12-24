@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2020_12_17_114852) do
     t.string "fact_column_2"
     t.string "fact_column_3"
     t.string "fact_column_4"
+    t.string "original_value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["added_by_id"], name: "index_statistics_on_added_by_id"

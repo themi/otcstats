@@ -11,6 +11,7 @@ class CreateStatistics < ActiveRecord::Migration[6.1]
       t.string :fact_column_2
       t.string :fact_column_3
       t.string :fact_column_4
+      t.string :original_value
 
       t.timestamps
     end

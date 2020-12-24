@@ -89,6 +89,6 @@ class StatisticsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def statistic_params
-      params.require(:statistic).permit(:organisation_id, :graph_id, :added_by_id, :week_ending_at, :value, :fact_column_1, :fact_column_2, :fact_column_3, :fact_column_4)
+      params.require(:statistic).permit(:organisation_id, :graph_id, :added_by_id, :week_ending_at, :value, :currency, :fact_column_1, :fact_column_2, :fact_column_3, :fact_column_4)
     end
 end

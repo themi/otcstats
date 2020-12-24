@@ -8,6 +8,7 @@
 #  fact_column_2   :string
 #  fact_column_3   :string
 #  fact_column_4   :string
+#  original_value  :string
 #  value           :float
 #  week_ending_at  :date
 #  created_at      :datetime         not null

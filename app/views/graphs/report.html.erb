@@ -15,7 +15,7 @@
     <% @graphs.each do |graph| %>
       <% statistics = Statistic.recent(@eow, graph.id) %>
       <li class="mt-4">
-        <h3><span class="badge badge-info"><%= number_with_precision statistics.sum(:value), precision: 0 %></span> <strong><%= graph.name %></strong></h3>
+        <h3><span class="badge badge-info"><%= number_with_precision stats_total_for(@eow, graph), precision: 0 %></span> <strong><%= graph.name %></strong></h3>
         <p>Definition: <%= graph.definition %></p>
         <% unless graph.field_titles_array.empty? %>
 
@@ -35,7 +35,7 @@
               <% statistics.each do |statistic| %>
                 <tr>
                   <% unless graph.value_title == "ea" %>
-                    <td><%= number_with_precision statistic.value, precision: 0 %></td>
+                    <td><%= render_statistic_value(statistic) %></td>
                   <% end %>
                   <% statistic.field_titles_array.each_with_index do |title, index| %>
                     <td><%= statistic.send("fact_column_#{index+1}") %></td>

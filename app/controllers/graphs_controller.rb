@@ -63,6 +63,7 @@ class GraphsController < ApplicationController
 
   # GET /graphs/report
   def report
+    CurrencyConverter.new.perform
     @organisation = current_member.organisation
     @graphs =  Graph.active_graphs_for(@organisation.id)
     @eow = Time.current_eow
