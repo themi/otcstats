@@ -61,13 +61,14 @@ t.integer :active_state, null: false, default: 0
 ```
 rails destroy scaffold Statistic
 
-rails g scaffold Statistic organisation:belongs_to graph:belongs_to added_by:integer week_ending_at:datetime value:float fact_column_1 fact_column_2 fact_column_3 fact_column_4
+rails g scaffold Statistic organisation:belongs_to graph:belongs_to added_by:integer week_ending_at:datetime value:float currency fact_column_1 fact_column_2 fact_column_3 fact_column_4
 
 t.belongs_to :organisation
 t.belongs_to :graph
 t.integer    :added_by
 t.datetime   :week_ending_at
 t.float      :value
+t.string     :currency
 t.string     :fact_column_1
 t.string     :fact_column_2
 t.string     :fact_column_3

@@ -2,15 +2,14 @@ Rails.application.routes.draw do
 
   devise_for :members
 
-  resources :statistics
+  resources :organisations
+  resources :members
   resources :graphs do
     collection do
       get 'report'
       get 'csv'
     end
   end
-  resources :members
-  resources :organisations
-
+  resources :statistics
   root to: "pages#home"
 end

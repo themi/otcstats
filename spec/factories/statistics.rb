@@ -3,6 +3,7 @@
 # Table name: statistics
 #
 #  id              :bigint           not null, primary key
+#  currency        :string
 #  fact_column_1   :string
 #  fact_column_2   :string
 #  fact_column_3   :string

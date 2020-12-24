@@ -19,7 +19,7 @@ default: &default
     organisation: "AOSH ANZO"
     short_name: "Funds Raised"
     definition: "The funds must be invoiced at the local org. Pledged amounts do not count. Note: IAS funds are reported separately."
-    value_title: "Donated or Raised"
+    value_title: "Funds Donated or Raised"
     field_titles: "Name|Org|OTC Member"
   - name: "Value of Funds Paid or Raised for other Orgs as an Alliance activity"
     envisage_key: 'gralb1usych'
@@ -29,7 +29,7 @@ default: &default
     organisation: "AOSH ANZO"
     short_name: "Alliance Funds Raised"
     definition: "These are funds raised as a result of an Alliance event held. The funds must have been invoiced in the Alliance org. Pledged amounts do not count. It includes all funds raised or paid by the OT Committee members themselves. Note: IAS funds are reported separately."
-    value_title: "Donated or Raised"
+    value_title: "Funds Donated or Raised"
     field_titles: "Name|Org|OTC Member"
   - name: "Total number of OT Ambassadors and OT Committee members"
     envisage_key: 'gradgk1w7nt'
@@ -48,8 +48,8 @@ default: &default
     organisation: "AOSH ANZO"
     short_name: "Active Members"
     definition: "An Active OT Ambassador or OT Committee Member is someone who is part of the OT Committee and has worked on OT Ambassador Program activities and/or OT Committee Projects or Team this week. Public working on 4D campaigns are not included as those activities are not part of the OT Ambassador Program)."
-    value_title: "Active"
-    field_titles: "Name|Project or Post"
+    value_title: "Active? (1 or 0)"
+    field_titles: "OTC Member|Project or Post worked on"
   - name: "Number of OT Committee members attending the weekly OT Committee meeting in their org."
     envisage_key: 'gra2qn6fpt9'
     envisage_name: "${<item_number>}. OTC Meeting Attendance - ${<organisation>}"
@@ -68,7 +68,7 @@ default: &default
     short_name: "Events"
     definition: "These are events that pertain to the OT Ambassador Program: they include Ideal Org fundraising dinners, fundraising events, Bridge Enlightenment Nights, Seminars, etc. The I/C of the event is responsible for reporting the event and filling out the report form on the event."
     value_title: "ea"
-    field_titles: "Event|Products|I/C"
+    field_titles: "Event held|Products gotten|Who was I/C"
   - name: "Number of Books Sold to Raw Public"
     envisage_key: 'gralr8yr9qh'
     envisage_name: "${<item_number>}. Number of Books Sold to Raw Public - ${<organisation>}"
@@ -86,8 +86,8 @@ default: &default
     organisation: "AOSH ANZO"
     short_name: "Volunteer Hours"
     definition: "These include hours spent on production and Central Files by OT Committee members or OT Committee project members. Note: The projects must be based on the targets of the OT Ambassador Program."
-    value_title: "Hours"
-    field_titles: "Project or Post|OTC/Project Member"
+    value_title: "Total Hours spent"
+    field_titles: "Project or Post|Project/OTC Member"
   - name: "Number of Volunteers working on Files Projects"
     envisage_key: 'gra1yiae97u'
     envisage_name: "${<item_number>}. Files Project - Number of Volunteers - ${<organisation>}"
@@ -97,7 +97,7 @@ default: &default
     short_name: "Files Project"
     definition: "This includes volunteers who are not OT Committee Members, such as students or volunteers from other areas who come to help."
     value_title: "ea"
-    field_titles: "Project|Volunteer"
+    field_titles: "Project|Volunteer Name"
   - name: "Number of People Assisted to Join Staff"
     envisage_key: 'gra84d2jhph'
     envisage_name: "${<item_number>}. Number of People Assisted to Join Staff - ${<organisation>}"
@@ -125,7 +125,7 @@ default: &default
     organisation: "AOSH ANZO"
     short_name: "IAS"
     definition: "(Includes all funds raised or paid by the OT Committee members to the IAS.)"
-    value_title: "Donated or Raised"
+    value_title: "Funds Donated or Raised"
     field_titles: "Name|OTC Member"
 
 development:

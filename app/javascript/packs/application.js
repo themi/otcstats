@@ -13,9 +13,10 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import "bootstrap"
+import "./autocomplete"
 
-$(function () {
+$(document).on('turbolinks:load', function() {
   $('[data-toggle="tooltip"]').tooltip();
   $('[data-toggle="popover"]').popover();
   $('.toast').toast('show', { autohide: false, delay: 3000 });
-})
+});

@@ -34,6 +34,9 @@
             <tbody>
               <% statistics.each do |statistic| %>
                 <tr>
+                  <% unless graph.value_title == "ea" %>
+                    <td><%= number_with_precision statistic.value, precision: 0 %></td>
+                  <% end %>
                   <% statistic.field_titles_array.each_with_index do |title, index| %>
                     <td><%= statistic.send("fact_column_#{index+1}") %></td>
                   <% end %>

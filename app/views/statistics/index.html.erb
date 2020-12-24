@@ -1,6 +1,6 @@
 <div class="container">
   <%= tag.h1 data: { toggle: "tooltip", placement: "top" }, title: @graph.definition do %>
-    <%= @graph %><small class="text-muted"> - <%= current_member %>, <%= current_member.organisation %></small>
+    <%= @graph %><small class="text-muted"> - <%= @graph.organisation %></small>
   <% end %>
 
   <table class="table">

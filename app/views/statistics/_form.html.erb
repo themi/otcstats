@@ -10,16 +10,20 @@
 
     <%= f.input :week_ending_at %>
 
-    <% if statistic.value_title == "ea" %>
-      <%= 1 %>
-      <%= f.input :value, as: :hidden, input_html: { value: 1 } %>
-    <% else %>
-      <%= f.input :value, label: statistic.value_title %>
-    <% end %>
     <div class="row">
+      <div class="col-sm">
+        <%= render_column_label(f, statistic.value_title) %>
+      </div>
+
+      <% if statistic.value_title.start_with?("Funds") %>
+        <div class="col-sm">
+          <%= f.input :currency, collection: ["AU", "US"], selected: "US" %>
+        </div>
+      <% end %>
+
       <% statistic.field_titles_array.each_with_index do |title, index| %>
       <div class="col-sm">
-        <%= f.input "fact_column_#{index+1}".to_sym, label: statistic.get_field_title_for(index) %>
+        <%= render_column_input(f, title, index) %>
       </div>
       <% end %>
     </div>

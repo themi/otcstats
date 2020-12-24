@@ -32,6 +32,10 @@ class Graph < ApplicationRecord
 
   validates :name, :value_title, presence: true
 
+  scope :graphs_for, ->(organisation_id) { where(organisation_id: organisation_id) }
+  scope :active_graphs, -> { where.not(active_state: :closed) }
+  scope :active_graphs_for, ->(organisation_id) { graphs_for(organisation_id).active_graphs.order(organisation_id: :asc, item_number: :asc) }
+
   def to_s
     self.short_name
   end

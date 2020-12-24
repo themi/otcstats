@@ -63,16 +63,15 @@ class GraphsController < ApplicationController
 
   # GET /graphs/report
   def report
-    @graphs =  Graph.normal.to_a + Graph.restricted.to_a
     @organisation = current_member.organisation
+    @graphs =  Graph.active_graphs_for(@organisation.id)
     @eow = Time.current_eow
   end
 
   # GET /graphs/csv
   def csv
-    graphs =  Graph.normal.to_a + Graph.restricted.to_a
-    eow = Time.current_eow
-    @envisage_csv = ExportStatistics.envisage_csv(eow, graphs)
+    @organisation = current_member.organisation
+    @envisage_csv = ExportStatistics.envisage_csv(Time.current_eow, Graph.active_graphs_for(@organisation))
   end
 
   private

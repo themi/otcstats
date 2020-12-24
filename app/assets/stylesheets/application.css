@@ -20,21 +20,8 @@
 }
 
 
-h1 {
-  font-size: 3.6vw;
-}
-h2 {
-  font-size: 3.2vh;
-}
-h3, dt, label {
-  font-size: 2.8vh;
-}
-p, td, li, dd {
-  font-size: 2vmin;
-}
-
 .pages.home .container {
-  min-height: 500px;
+  min-height: 400px;
 }
 
 .graphs.report h1 {
@@ -80,6 +67,11 @@ p, td, li, dd {
   body {
     margin: 0;
   }
+
+  .graphs.report ol li h3 {
+    page-break-before: auto;
+  }
+
 
   nav, footer {
       display: none;

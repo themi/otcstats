@@ -1,6 +1,6 @@
 class StatisticsController < ApplicationController
   before_action :set_statistic, only: [:show, :edit, :update, :destroy]
-  before_action :set_graph
+  before_action :set_graph, except: :autocomplete
 
   # GET /statistics
   # GET /statistics.json
