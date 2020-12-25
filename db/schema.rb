@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2020_12_17_114852) do
   end
 
   create_table "organisations", force: :cascade do |t|
+    t.string "continent"
     t.string "name"
     t.string "envisage_key"
     t.datetime "created_at", precision: 6, null: false

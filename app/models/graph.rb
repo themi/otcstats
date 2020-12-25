@@ -27,13 +27,13 @@
 class Graph < ApplicationRecord
   belongs_to :organisation
 
-  enum active_state: [:normal, :restricted, :closed]
+  enum active_state: [:normal, :restricted, :archived]
   after_initialize :set_default_active_state, if: :new_record?
 
   validates :name, :value_title, presence: true
 
   scope :graphs_for, ->(organisation_id) { where(organisation_id: organisation_id) }
-  scope :active_graphs, -> { where.not(active_state: :closed) }
+  scope :active_graphs, -> { where.not(active_state: :archived) }
   scope :active_graphs_for, ->(organisation_id) { graphs_for(organisation_id).active_graphs.order(organisation_id: :asc, item_number: :asc) }
 
   def to_s

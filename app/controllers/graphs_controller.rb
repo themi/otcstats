@@ -63,22 +63,27 @@ class GraphsController < ApplicationController
 
   # GET /graphs/report
   def report
-    CurrencyConverter.new.perform
-    @organisation = current_member.organisation
-    @graphs =  Graph.active_graphs_for(@organisation.id)
-    @eow = Time.current_eow
+    prepare_for_export
   end
 
   # GET /graphs/csv
   def csv
-    @organisation = current_member.organisation
-    @envisage_csv = ExportStatistics.envisage_csv(Time.current_eow, Graph.active_graphs_for(@organisation))
+    prepare_for_export
+    @envisage_csv = ExportStatistics.envisage_csv(@eow, @graphs)
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_graph
       @graph = Graph.find(params[:id])
+    end
+
+    def prepare_for_export
+      org_id = params[:organisation_id] || current_member.organisation.id
+      @organisation = Organisation.find(org_id)
+      @graphs =  Graph.active_graphs_for(@organisation)
+      @eow = Time.current_eow
+      CurrencyConverter.new.perform
     end
 
     # Only allow a list of trusted parameters through.

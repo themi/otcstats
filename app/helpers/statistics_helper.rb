@@ -13,11 +13,15 @@ module StatisticsHelper
   end
 
   def render_column_input(form, title, index)
-    if title.include?("OTC Member")
-      form.input "fact_column_#{index+1}".to_sym, label: title, as: :autocomplete, model: "Member", method: "full_name"
+    case title
+    when "OTC Member"
+      form.input "fact_column_#{index+1}".to_sym, label: title, collection: Member.select_list
+    when "Org"
+      form.input "fact_column_#{index+1}".to_sym, label: title, collection: Organisation.select_list
     else
       form.input "fact_column_#{index+1}".to_sym, label: title
     end
+
   end
 
 end

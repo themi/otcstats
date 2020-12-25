@@ -7,7 +7,7 @@ namespace :dbmaint do
     task load_graphs: :environment do
       data = Rails.application.config_for(:otc_graphs)
       data[:otc_graphs].each do |row|
-        org = Organisation.find_or_create_by(name: row[:organisation])
+        org = Organisation.find_or_create_by(name: row[:organisation], continent: row[:continent])
         Graph.find_or_create_by(organisation: org, name: row[:name]) do |r|
           r.item_number = row[:item_number]
           r.organisation = org
@@ -27,7 +27,7 @@ namespace :dbmaint do
     task load_members: :environment do
       csv_file = Rails.root.join("config", "members.csv")
       CSV.foreach(csv_file, headers: true) do |row|
-        org = Organisation.find_or_create_by(name: row["organisation"])
+        org = Organisation.find_or_create_by(name: row["organisation"], continent: row["continent"])
         Member.find_or_create_by(organisation: org, full_name: row["full_name"]) do |r|
           r.organisation = org
           r.full_name = row["full_name"]
@@ -42,6 +42,18 @@ namespace :dbmaint do
           r.password = pass
           r.password_confirmation = pass
           puts "Email: #{r.email.inspect}, Password: #{pass.inspect}"
+        end
+      end
+    end
+
+    desc "Load Organisation"
+    task load_org: :environment do
+      csv_file = Rails.root.join("config", "organisations.csv")
+      CSV.foreach(csv_file, headers: true) do |row|
+        Organisation.find_or_create_by(name: row["name"]) do |r|
+          r.continent = row["continent"]
+          r.name = row["name"]
+          r.envisage_key = row["envisage_key"]
         end
       end
     end

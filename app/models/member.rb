@@ -35,10 +35,20 @@ class Member < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
   belongs_to :organisation
 
-  enum role: [:member, :maintainer]
+  enum role: [:member, :maintainer, :archived]
   after_initialize :set_default_role, if: :new_record?
+
+  def self.select_list(organisation_id=nil)
+    results = if organisation_id
+      where(organisation_id: organisation_id)
+    else
+      self
+    end
+    results.order(organisation_id: :asc, full_name: :asc).map { |m| m.full_name }
+  end
 
   def to_s
     self.full_name

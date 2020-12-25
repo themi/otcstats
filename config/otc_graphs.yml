@@ -6,7 +6,8 @@ default: &default
     envisage_name: "${<item_number>}. Next Bridge Steps - ${<organisation>}"
     active_state: 0
     item_number: 1
-    organisation: "AOSH ANZO"
+    organisation: "AOSH"
+    continent: "ANZO"
     short_name: "Bridge Steps"
     definition: "This includes all starts on a paid major or minor service, training and processing, including any course on the Golden Age of Knowledge Routes, at a mission or org or Advanced Org brought about by the OT Committee or an OTC Member. Refreshers do not count."
     value_title: "ea"
@@ -16,7 +17,8 @@ default: &default
     envisage_name: "${<item_number>}. Ideal Org Funds Raised - ${<organisation>}"
     active_state: 1
     item_number: 2
-    organisation: "AOSH ANZO"
+    organisation: "AOSH"
+    continent: "ANZO"
     short_name: "Funds Raised"
     definition: "The funds must be invoiced at the local org. Pledged amounts do not count. Note: IAS funds are reported separately."
     value_title: "Funds Donated or Raised"
@@ -26,7 +28,8 @@ default: &default
     envisage_name: "${<item_number>}. Alliance Funds Raised - ${<organisation>}"
     active_state: 0
     item_number: 3
-    organisation: "AOSH ANZO"
+    organisation: "AOSH"
+    continent: "ANZO"
     short_name: "Alliance Funds Raised"
     definition: "These are funds raised as a result of an Alliance event held. The funds must have been invoiced in the Alliance org. Pledged amounts do not count. It includes all funds raised or paid by the OT Committee members themselves. Note: IAS funds are reported separately."
     value_title: "Funds Donated or Raised"
@@ -36,7 +39,8 @@ default: &default
     envisage_name: "${<item_number>}. OTC Members - ${<organisation>}"
     active_state: 1
     item_number: 4
-    organisation: "AOSH ANZO"
+    organisation: "AOSH"
+    continent: "ANZO"
     short_name: "Members"
     definition: "This is the total number of OT Ambassadors and OT Committee members on your OT Committee."
     value_title: "Total"
@@ -45,7 +49,8 @@ default: &default
     envisage_name: "${<item_number>}. Active OTC Members - ${<organisation>}"
     active_state: 0
     item_number: 5
-    organisation: "AOSH ANZO"
+    organisation: "AOSH"
+    continent: "ANZO"
     short_name: "Active Members"
     definition: "An Active OT Ambassador or OT Committee Member is someone who is part of the OT Committee and has worked on OT Ambassador Program activities and/or OT Committee Projects or Team this week. Public working on 4D campaigns are not included as those activities are not part of the OT Ambassador Program)."
     value_title: "Active? (1 or 0)"
@@ -55,7 +60,8 @@ default: &default
     envisage_name: "${<item_number>}. OTC Meeting Attendance - ${<organisation>}"
     active_state: 0
     item_number: 6
-    organisation: "AOSH ANZO"
+    organisation: "AOSH"
+    continent: "ANZO"
     short_name: "Attendance"
     definition: "This is the total number of OT Ambassadors and OT Committee members who are members of the local OT Committee and have attended the OT Committee meeting that week."
     value_title: "Total"
@@ -64,7 +70,8 @@ default: &default
     envisage_name: "${<item_number>}. OTC Events - ${<organisation>}"
     active_state: 0
     item_number: 7
-    organisation: "AOSH ANZO"
+    organisation: "AOSH"
+    continent: "ANZO"
     short_name: "Events"
     definition: "These are events that pertain to the OT Ambassador Program: they include Ideal Org fundraising dinners, fundraising events, Bridge Enlightenment Nights, Seminars, etc. The I/C of the event is responsible for reporting the event and filling out the report form on the event."
     value_title: "ea"
@@ -74,7 +81,8 @@ default: &default
     envisage_name: "${<item_number>}. Number of Books Sold to Raw Public - ${<organisation>}"
     active_state: 0
     item_number: 8
-    organisation: "AOSH ANZO"
+    organisation: "AOSH"
+    continent: "ANZO"
     short_name: "Books Sold"
     definition: "(This could be DMSMH or Self Analysis or any other Basic book sold while doing dissemination activities, stress tests etc. Note that this stat would NOT include pamphlets sold such as the VM Booklets)"
     value_title: "Total Sold"
@@ -83,7 +91,8 @@ default: &default
     envisage_name: "${<item_number>}. OTC Hours - ${<organisation>}"
     active_state: 0
     item_number: 9
-    organisation: "AOSH ANZO"
+    organisation: "AOSH"
+    continent: "ANZO"
     short_name: "Volunteer Hours"
     definition: "These include hours spent on production and Central Files by OT Committee members or OT Committee project members. Note: The projects must be based on the targets of the OT Ambassador Program."
     value_title: "Total Hours spent"
@@ -93,7 +102,8 @@ default: &default
     envisage_name: "${<item_number>}. Files Project - Number of Volunteers - ${<organisation>}"
     active_state: 1
     item_number: 10
-    organisation: "AOSH ANZO"
+    organisation: "AOSH"
+    continent: "ANZO"
     short_name: "Files Project"
     definition: "This includes volunteers who are not OT Committee Members, such as students or volunteers from other areas who come to help."
     value_title: "ea"
@@ -103,7 +113,8 @@ default: &default
     envisage_name: "${<item_number>}. Number of People Assisted to Join Staff - ${<organisation>}"
     active_state: 0
     item_number: 11
-    organisation: "AOSH ANZO"
+    organisation: "AOSH"
+    continent: "ANZO"
     short_name: "Joined Staff"
     definition: "This would be anyone who joins staff from a Recruitment Event held by the OT Committee or by someone brought into the org to be recruited."
     value_title: "ea"
@@ -113,7 +124,8 @@ default: &default
     envisage_name: "${<item_number>}. OTC CRs - ${<organisation>}"
     active_state: 1
     item_number: 12
-    organisation: "AOSH ANZO"
+    organisation: "AOSH"
+    continent: "ANZO"
     short_name: "Compliance Reports"
     definition: "This is the total number of targets done with compliance reports on the OT Ambassador Program and the OT projects done by the OT Committee as per the OT Ambassador Program."
     value_title: "Total"
@@ -122,7 +134,8 @@ default: &default
     envisage_name: "${<item_number>}. IAS Funds Raised - ${<organisation>}"
     active_state: 0
     item_number: 13
-    organisation: "AOSH ANZO"
+    organisation: "AOSH"
+    continent: "ANZO"
     short_name: "IAS"
     definition: "(Includes all funds raised or paid by the OT Committee members to the IAS.)"
     value_title: "Funds Donated or Raised"

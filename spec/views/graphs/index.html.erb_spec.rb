@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "graphs/index", type: :view do
   let(:member) { create(:member) }
-  let(:org) { create(:organisation, name: "ORG_NAME") }
+  let(:org) { create(:organisation, name: "ORG_NAME", continent: "CONT") }
 
   before(:each) do
     assign(:graphs, [
@@ -32,7 +32,7 @@ RSpec.describe "graphs/index", type: :view do
   it "renders a list of graphs" do
     sign_in member
     render
-    assert_select "tr>td", text: "ORG_NAME", count: 2
+    assert_select "tr>td", text: "ORG_NAME CONT", count: 2
     assert_select "tr>td", text: "GRAPH_NAME", count: 2
     # assert_select "tr>td", text: 2.to_s, count: 2
     assert_select "tr>td", text: "GRAPH_SHORT_NAME", count: 2

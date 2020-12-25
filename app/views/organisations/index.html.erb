@@ -4,6 +4,7 @@
   <table class="table">
     <thead>
       <tr>
+        <th scope="col">Continent</th>
         <th scope="col">Name</th>
         <th scope="col">Envisage key</th>
         <th scope="col">Action</th>
@@ -13,7 +14,8 @@
     <tbody>
       <% @organisations.each do |organisation| %>
         <tr>
-          <td scope="row"><%= organisation.name %></td>
+          <td scope="col"><%= organisation.continent %></td>
+          <td><%= organisation.name %></td>
           <td><%= organisation.envisage_key %></td>
           <td><%= table_action_buttons(organisation, []) %></td>
         </tr>
