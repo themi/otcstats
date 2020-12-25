@@ -1,0 +1,7 @@
+---
+:exchange_rates:
+  :AU:
+    :US:
+      :source: 'https://www.rba.gov.au/statistics/frequency/exchange-rates.html'
+      :as_at: '2020-12-24'
+      :rate: 0.7582
