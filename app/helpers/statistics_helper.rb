@@ -14,7 +14,7 @@ module StatisticsHelper
 
   def render_column_input(form, title, index)
     case title
-    when "OTC Member"
+    when /OTC Member/
       form.input "fact_column_#{index+1}".to_sym, label: title, collection: Member.select_list
     when "Org"
       form.input "fact_column_#{index+1}".to_sym, label: title, collection: Organisation.select_list
