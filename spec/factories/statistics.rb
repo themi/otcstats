@@ -34,11 +34,11 @@ FactoryBot.define do
     organisation
     graph
     added_by       { create(:member) }
-    week_ending_at { "2020-12-17" }
-    value          { 1 }
+    week_ending_at { Time.current.to_date }
+    value          { rand(1000) }
     fact_column_1  { "COL1" }
     fact_column_2  { "COL2" }
     fact_column_3  { "COL3" }
-    fact_column_4  { "COL4" }
+    fact_column_4  { ["COL4",nil].sample }
   end
 end

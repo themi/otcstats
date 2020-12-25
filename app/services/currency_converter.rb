@@ -25,13 +25,6 @@ class CurrencyConverter
       data = YAML.load_file(file_path)[:exchange_rates]
       data[from_currency.to_sym][to_currency.to_sym][:rate].to_f
     rescue => e
-      puts "======================"
-      puts "Exhange rate NOT FOUND - no records updated!"
-      puts "----------------------"
-      puts e.inspect
-      puts "----------------------"
-      puts data.inspect
-      puts "======================"
       nil
     end
   end
