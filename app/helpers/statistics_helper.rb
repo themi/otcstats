@@ -15,7 +15,7 @@ module StatisticsHelper
   def render_column_input(form, title, index)
     case title
     when /OTC Member/
-      form.input "fact_column_#{index+1}".to_sym, label: title, collection: Member.select_list
+      form.input "fact_column_#{index+1}".to_sym, label: title, as: :autocompleter, model: "Member", fieldname: "full_name"
     when "Org"
       form.input "fact_column_#{index+1}".to_sym, label: title, collection: Organisation.select_list
     else
