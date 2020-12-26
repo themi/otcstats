@@ -2,7 +2,7 @@
 
 (function ($) {
     var defaults = {
-        treshold: 4,
+        treshold: 3,
         maximumItems: 5,
         highlightTyped: true,
         highlightClass: 'text-primary',
