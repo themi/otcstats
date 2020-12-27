@@ -12,6 +12,6 @@
 FactoryBot.define do
   factory :organisation do
     continent { FFaker::Lorem.word }
-    name { FFaker::Lorem.words }
+    name      { FFaker::Lorem.words }
   end
 end

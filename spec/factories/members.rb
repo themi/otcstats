@@ -31,18 +31,18 @@
 #
 FactoryBot.define do
   factory :member do
-    email   { |i| FFaker::Internet.email }
-    full_name  { FFaker::Name.name }
-    phone { FFaker::PhoneNumberAU.mobile_phone_number }
-    address { FFaker::AddressAU.full_address }
-    training_level { ["Clear","Solo","OT1","OT2"] }
+    email            { |i| FFaker::Internet.email }
+    full_name        { FFaker::Name.name }
+    phone            { FFaker::PhoneNumberAU.mobile_phone_number }
+    address          { FFaker::AddressAU.full_address }
+    training_level   { ["Clear","Solo","OT1","OT2"] }
     processing_level { ["Clear","Solo","OT1","OT2"] }
     password              { "verySecr3t!" }
     password_confirmation { "verySecr3t!" }
     organisation
 
     trait :maintainer do
-      role = :maintainer
+      role {"maintainer"}
     end
   end
 end

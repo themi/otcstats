@@ -11,6 +11,7 @@
         <% @graph.field_titles_array.each do |title| %>
           <th scope="col"><%= title %></th>
         <% end %>
+        <th scope="col">Added By</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
@@ -23,6 +24,7 @@
           <% statistic.field_titles_array.each_with_index do |title, index| %>
             <td><%= statistic.send("fact_column_#{index+1}") %></td>
           <% end %>
+          <td><%= statistic.added_by %></td>
           <td><%= table_action_buttons(statistic, ["graph_id", @graph.id]) %></td>
         </tr>
       <% end %>

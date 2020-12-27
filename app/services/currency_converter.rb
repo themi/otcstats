@@ -3,11 +3,12 @@ class CurrencyConverter
   attr_accessor :rate, :rate_description
 
   def initialize(eow=nil, from_currency="AUD", to_currency="USD")
-    @eow ||= Time.current.production_end_of_week
+    @eow = eow || Time.current_eow
     @from_currency = from_currency
+    @to_currency = to_currency
     if (data = get_exchange_rate(from_currency))
       @rate = data[:rate]
-      @rate_description = data[:description]
+      @rate_description = data[:rate_description]
     end
   end
 

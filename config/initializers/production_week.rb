@@ -89,11 +89,11 @@ class Time
     end
 
     def current_eow
-      current.production_end_of_week
+      current.production_end_of_week.to_date
     end
 
     def previous_eow
-      (current - 7.days).production_end_of_week
+      (current - 7.days).production_end_of_week.to_date
     end
   end
 end

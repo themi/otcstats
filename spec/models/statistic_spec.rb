@@ -32,7 +32,7 @@
 require 'rails_helper'
 
 RSpec.describe Statistic, type: :model do
-  let(:eow)    { Time.current.production_end_of_week }
+  let(:eow)    { Time.current_eow }
   let(:graph) { create(:graph) }
   let(:member1) { create(:member) }
   let(:member2) { create(:member) }

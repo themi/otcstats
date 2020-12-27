@@ -22,7 +22,7 @@
   <tbody>
     <% @graphs.each do |graph| %>
       <tr>
-        <th scope="row"><%= graph.item_number %></td>
+        <td scope="row"><%= graph.item_number %></td>
         <% unless browser_object.is_mobile? %>
         <td><%= graph.organisation.to_s %></td>
         <% end %>

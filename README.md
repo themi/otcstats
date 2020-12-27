@@ -75,3 +75,30 @@ t.string     :fact_column_3
 t.string     :fact_column_4
 t.string     :original_value
 ```
+
+## Archived
+
+```
+    # def envisage(eow=nil, graphs=nil)
+    #   build_envisage_packet(eow, graphs)
+    # end
+
+    # def build_envisage_packet(eow=nil, graphs=nil)
+    #   all_graphs ||= Graph.normal.to_a + Graph.restricted.to_a
+    #   eow ||= Time.current_eow
+
+    #   data_points = []
+    #   all_graphs.each do |graph|
+    #     data_points << {
+    #       graph_id: graph.envisage_key,
+    #       value: Statistic.total_stats(eow, graph.id)
+    #     }
+    #   end
+
+    #   {
+    #     period: eow.strftime("%Y-%m-%d"),
+    #     data_points: data_points
+    #   }
+    # end
+
+```

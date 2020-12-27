@@ -34,7 +34,7 @@ FactoryBot.define do
     organisation
     graph
     added_by       { create(:member) }
-    week_ending_at { Time.current.to_date }
+    week_ending_at { Time.current_eow }
     value          { rand(1000) }
     fact_column_1  { "COL1" }
     fact_column_2  { "COL2" }

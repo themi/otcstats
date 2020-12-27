@@ -23,7 +23,7 @@ class StatisticsController < ApplicationController
       graph_id: @graph.id,
       organisation_id: current_member.organisation.id,
       added_by_id: current_member.id,
-      week_ending_at: Time.current.production_end_of_week.to_date
+      week_ending_at: Time.current_eow
     }
     @statistic = Statistic.new(attrs)
   end

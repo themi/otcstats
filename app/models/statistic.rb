@@ -70,8 +70,8 @@ class Statistic < ApplicationRecord
     self.graph.field_titles_array
   end
 
-  def get_field_title_for(index)
-    self.graph.get_field_title_for(index)
-  end
+  # def get_field_title_for(index)
+  #   self.graph.get_field_title_for(index)
+  # end
 
 end
