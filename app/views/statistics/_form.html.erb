@@ -17,7 +17,7 @@
 
       <% if statistic.value_title.start_with?("Funds") %>
         <div class="col-sm">
-          <%= f.input :currency, collection: ["AU", "US"], selected: "US" %>
+          <%= f.input :currency, collection: ["AUD", "USD"], selected: "USD" %>
         </div>
       <% end %>
 
