@@ -15,7 +15,11 @@ module Envisage
     end
 
     def get
-      api_get
+      api_call("get")
+    end
+
+    def post
+      api_call("post")
     end
 
     private
@@ -24,12 +28,18 @@ module Envisage
       raise NotImplementedError
     end
 
-    def api_get
+    def api_call(action_method)
       uri = URI(File.join(envisage_base_url, resource_path))
-      uri.query = URI.encode_www_form(params) if params
+      uri.query = URI.encode_www_form(params)
 
       Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == "https") do |http|
-        request = Net::HTTP::Get.new uri
+        request = nil
+        if action_method == 'post'
+          request = Net::HTTP::Post.new uri
+          request.set_form_data(params)
+        else
+          request = Net::HTTP::Get.new uri
+        end
         request["Content-Type"] = "application/json"
         request["Accept"] = "application/json"
         request["api-email"] = "#{envisage_api_email}"
