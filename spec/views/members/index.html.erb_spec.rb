@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "members/index", type: :view do
+RSpec.describe "admin/members/index", type: :view do
   let(:org) { create(:organisation, name: "MY_ORG_NAME") }
   let(:user) {
     create(:member,

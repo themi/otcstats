@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "members/new", type: :view do
+RSpec.describe "admin/members/new", type: :view do
   let(:user) { create(:member) }
 
   before(:each) do
@@ -11,7 +11,7 @@ RSpec.describe "members/new", type: :view do
     sign_in user
     render
 
-    assert_select "form[action=?][method=?]", members_path, "post" do
+    assert_select "form[action=?][method=?]", admin_members_path, "post" do
 
       assert_select "select[name=?]", "member[organisation_id]"
 
