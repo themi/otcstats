@@ -18,6 +18,8 @@ RSpec.describe CurrencyConverter do
       converter.perform
       stat.reload
       expect(stat.currency).to eq to_currency
+      expect(stat.value).to eq 50
+      expect(stat.original_value).to include("100.0XYZ")
     end
   end
 

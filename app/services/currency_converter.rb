@@ -16,7 +16,7 @@ class CurrencyConverter
     unless rate.nil?
       au_records = Statistic.where(week_ending_at: eow).where(currency: from_currency)
       au_records.each do |record|
-        record.original_value = rate_description
+        record.original_value = "#{record.value}#{from_currency} (#{rate_description})"
         record.value = (record.value * rate)
         record.currency = to_currency
         record.save

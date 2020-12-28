@@ -44,6 +44,11 @@
     <%= @statistic.fact_column_4 %>
   </p>
 
+  <p>
+    <strong>Original Value:</strong>
+    <%= @statistic.original_value %>
+  </p>
+
   <%= link_to 'Edit', edit_statistic_path(@statistic, graph_id: @graph.id), class: "btn btn-primary mb-1" %> |
   <%= link_to 'Back', statistics_path(graph_id: @graph.id), class: "btn btn-info mb-1" %>
 

@@ -15,7 +15,8 @@ RSpec.describe "statistics/show", type: :view do
       fact_column_1: "COLUMN_DATA1",
       fact_column_2: "COLUMN_DATA2",
       fact_column_3: "COLUMN_DATA3",
-      fact_column_4: "COLUMN_DATA4"
+      fact_column_4: "COLUMN_DATA4",
+      original_value: "ORIGINAL_VALUE"
     ))
   end
 
@@ -30,5 +31,6 @@ RSpec.describe "statistics/show", type: :view do
     expect(rendered).to match(/COLUMN_DATA2/)
     expect(rendered).to match(/COLUMN_DATA3/)
     expect(rendered).to match(/COLUMN_DATA4/)
+    expect(rendered).to match(/ORIGINAL_VALUE/)
   end
 end
