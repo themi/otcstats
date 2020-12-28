@@ -4,13 +4,14 @@ require 'open-uri'
 module ExchangeRates
   class RbaGovAu
     def perform(convert_to="USD")
-
       feed = rss_feed_for(rss_url)
-
-      au_data = feed.items.select { |item| item.title.match(/ #{convert_to} = 1 AUD/) }.first
-      unless au_data.nil?
-        m = au_data.title.match(/ (?<rate>\d*\.?\d*)/)
-        { rate: m[:rate].to_f, description: au_data.title }
+      au_item = feed.items.select { |item| item.description.match(/^AUD\/#{convert_to}/) }.first
+      unless au_item.nil?
+        m = au_item.title.match(/^AU: (?<rate>\d*\.?\d*)/)
+        {
+          rate: m[:rate].to_f,
+          description: "rate #{m[:rate]} as at #{au_item.date}"
+        }
       end
     end
 
