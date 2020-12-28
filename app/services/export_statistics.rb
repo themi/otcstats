@@ -13,7 +13,7 @@ class ExportStatistics
     private
 
     def build_envisage_csv(eow=nil, graphs=nil)
-      all_graphs ||= Graph.normal.to_a + Graph.restricted.to_a
+      all_graphs = graphs || Graph.active_graphs
       eow ||= Time.current_eow
 
       CSV.generate do |csv|
@@ -26,9 +26,10 @@ class ExportStatistics
     end
 
     def eval_envisage_name(graph)
-      buffer = graph.envisage_name.gsub("${<item_number>}", graph.item_number.to_s.rjust(2, '0'))
-      buffer = buffer.gsub("${<organisation>}", graph.organisation.to_s)
-      buffer
+      if graph.envisage_name
+        buffer = graph.envisage_name.gsub("${<item_number>}", graph.item_number.to_s.rjust(2, '0'))
+        buffer.gsub("${<organisation>}", graph.organisation.to_s)
+      end
     end
 
     # def build_envisage_packet(eow=nil, graphs=nil)

@@ -24,31 +24,30 @@ class MembersController < ApplicationController
   # POST /members
   # POST /members.json
   def create
-    @member = Member.new(member_params)
-
-    respond_to do |format|
-      if @member.save
-        format.html { redirect_to @member, notice: 'Member was successfully created.' }
-        format.json { render :show, status: :created, location: @member }
-      else
-        format.html { render :new }
-        format.json { render json: @member.errors, status: :unprocessable_entity }
-      end
-    end
+    # @member = Member.new(member_params)
+    # respond_to do |format|
+    #   if @member.save
+    #     format.html { redirect_to @member, notice: 'Member was successfully created.' }
+    #     format.json { render :show, status: :created, location: @member }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @member.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /members/1
   # PATCH/PUT /members/1.json
   def update
-    respond_to do |format|
-      if @member.update(member_params)
-        format.html { redirect_to @member, notice: 'Member was successfully updated.' }
-        format.json { render :show, status: :ok, location: @member }
-      else
-        format.html { render :edit }
-        format.json { render json: @member.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @member.update(member_params)
+    #     format.html { redirect_to @member, notice: 'Member was successfully updated.' }
+    #     format.json { render :show, status: :ok, location: @member }
+    #   else
+    #     format.html { render :edit }
+    #     format.json { render json: @member.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /members/1

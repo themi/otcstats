@@ -10,11 +10,25 @@ RSpec.describe CurrencyConverter do
   let(:exchange_data) {{ rate: 0.5, rate_description: "XYZ DESCRIPTION" }}
   let!(:stat) { create(:statistic, value: 100, currency: from_currency, week_ending_at: eow) }
 
-  it "converts to new currency" do
-    expect(ExchangeRates::RbaGovAu).to receive(:new) { double("Exchange", perform: exchange_data) }
-    converter.perform
-    stat.reload
-    expect(stat.currency).to eq to_currency
+  context "with successful call to Exchange" do
+    before {
+      expect(ExchangeRates::RbaGovAu).to receive(:new) { double("Exchange", perform: exchange_data) }
+    }
+    it "converts to new currency" do
+      converter.perform
+      stat.reload
+      expect(stat.currency).to eq to_currency
+    end
   end
 
+  context "with unsuccessful call to Exchange" do
+    before {
+      expect(ExchangeRates::RbaGovAu).to receive(:new) { raise "Error" }
+    }
+    it "skips convert to new currency" do
+      converter.perform
+      stat.reload
+      expect(stat.currency).to eq from_currency
+    end
+  end
 end
