@@ -21,6 +21,8 @@ gem 'devise'
 # gem 'pundit'
 # gem 'image_processing', '~> 1.2'
 
+gem "ops_care", git: "git@github.com:reinteractive/OpsCare.git", branch: "master"
+
 group :development do
   gem 'web-console', '>= 4.1.0'
   gem 'rack-mini-profiler', '~> 2.0'
