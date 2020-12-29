@@ -21,6 +21,9 @@ Bundler.require(*Rails.groups)
 
 module Otcstats
   class Application < Rails::Application
+    # config.skylight.environments += ["staging"]
+    # config.skylight.alert_log_file = true
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
