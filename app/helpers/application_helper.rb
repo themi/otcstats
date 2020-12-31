@@ -10,8 +10,9 @@ module ApplicationHelper
     end
   end
 
-  def table_action_buttons(record, vars, actions=[], commands="ed")
+  def table_action_buttons(record, vars, actions=[], commands="ed", scope=nil)
     url = "/#{record.class.name.tableize}/#{record.id}"
+    url = "/#{scope}#{url}" if scope
 
     if commands.include?("s")
       actions << button_to(url, class: "btn btn-success btn-sm m-1", method: :get, data: { toggle: "tooltip", placement: "top" }, title: "Display this record") do

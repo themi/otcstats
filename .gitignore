@@ -40,3 +40,4 @@ yarn-debug.log*
 /coverage
 
 config/database.yml
+db/*.sqlite3

@@ -1,4 +1,4 @@
 module Admin
-  class BaseController < ActionController::Base
+  class BaseController < ApplicationController
   end
 end

@@ -16,7 +16,7 @@ RSpec.describe "View Statistics page", type: :system do
       sign_in member
       visit statistics_path(graph_id: graph.id)
 
-      expect(page).to have_selector "td", text: Time.current_eow.strftime("%d\/%m\/%Y"), count: 1
+      expect(page).to have_selector "td", text: Time.current_eow.strftime("%-d\/%-m\/%Y"), count: 1
     end
   end
 
@@ -27,7 +27,7 @@ RSpec.describe "View Statistics page", type: :system do
       sign_in member
       visit statistics_path(graph_id: graph.id)
 
-      expect(page).to have_selector "td", text: Time.current_eow.strftime("%d\/%m\/%Y"), count: 3
+      expect(page).to have_selector "td", text: Time.current_eow.strftime("%-d\/%-m\/%Y"), count: 3
     end
   end
 end

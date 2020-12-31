@@ -15,7 +15,7 @@ RSpec.describe "admin/members/new", type: :view do
 
       assert_select "select[name=?]", "member[organisation_id]"
 
-      assert_select "input[name=?]", "member[role]"
+      assert_select "select[name=?]", "member[role]"
 
       assert_select "input[name=?]", "member[full_name]"
 

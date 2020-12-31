@@ -55,7 +55,7 @@ RSpec.describe "/admin//members", type: :request do
 
       it "redirects to the created member" do
         post admin_members_url, params: { member: valid_attributes }
-        expect(response).to redirect_to(admin_member_url(Member.last))
+        expect(response).to redirect_to(admin_members_url)
       end
     end
 
@@ -90,7 +90,7 @@ RSpec.describe "/admin//members", type: :request do
         member = Member.create! valid_attributes
         patch admin_member_url(member), params: { member: new_attributes }
         member.reload
-        expect(response).to redirect_to(admin_member_url(member))
+        expect(response).to redirect_to(admin_members_url)
       end
     end
 
