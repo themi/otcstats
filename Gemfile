@@ -23,6 +23,7 @@ gem 'devise'
 # gem 'image_processing', '~> 1.2'
 
 gem "ops_care", git: "git@github.com:reinteractive/OpsCare.git", branch: "master"
+gem "ffaker"
 
 group :development do
   gem 'web-console', '>= 4.1.0'
@@ -35,7 +36,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem "dotenv-rails"
   gem "factory_bot_rails"
-  gem "ffaker"
 end
 
 group :test do
