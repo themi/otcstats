@@ -11,7 +11,7 @@ class DummyStats
       add_dummy_stats_for(member)
     end
     # Attendance
-    attendance(member)
+    attendance(Member.all.sample)
   end
 
   private
