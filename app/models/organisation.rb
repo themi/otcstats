@@ -10,6 +10,7 @@
 #  updated_at   :datetime         not null
 #
 class Organisation < ApplicationRecord
+  has_many :graphs
 
   validates :name, presence: true
 

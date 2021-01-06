@@ -2,7 +2,7 @@
 
 RSpec.describe "/graphs", type: :request do
   let(:org) { create(:organisation) }
-  let(:member) { create(:member) }
+  let(:member) { create(:member, organisation: org) }
   before { sign_in member }
 
   let(:valid_attributes) {

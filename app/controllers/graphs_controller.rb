@@ -1,10 +1,11 @@
 class GraphsController < ApplicationController
+  before_action :set_organisation
   before_action :set_graph, only: [:show, :edit, :update, :destroy]
 
   # GET /graphs
   # GET /graphs.json
   def index
-    @graphs = Graph.all
+    @graphs = @organisation.graphs.all
   end
 
   # GET /graphs/1
@@ -14,7 +15,7 @@ class GraphsController < ApplicationController
 
   # GET /graphs/new
   def new
-    @graph = Graph.new
+    @graph = @organisation.graphs.new
   end
 
   # GET /graphs/1/edit
@@ -24,7 +25,7 @@ class GraphsController < ApplicationController
   # POST /graphs
   # POST /graphs.json
   def create
-    @graph = Graph.new(graph_params)
+    @graph = @organisation.graphs.new(graph_params)
 
     respond_to do |format|
       if @graph.save
@@ -75,12 +76,15 @@ class GraphsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_graph
-      @graph = Graph.find(params[:id])
+      @graph = @organisation.graphs.find(params[:id])
+    end
+
+    def set_organisation
+      org_id = params[:organisation_id] || current_member.organisation.id
+      @organisation = Organisation.find(org_id)
     end
 
     def prepare_for_export
-      org_id = params[:organisation_id] || current_member.organisation.id
-      @organisation = Organisation.find(org_id)
       @graphs =  Graph.active_graphs_for(@organisation)
       @eow = Time.current_eow
       CurrencyConverter.new.perform
