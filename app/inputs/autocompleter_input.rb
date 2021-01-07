@@ -19,6 +19,9 @@ class AutocompleterInput < SimpleForm::Inputs::TextInput
     new_options["data-provider"] = "autocompleter"
     new_options["data-url"] = "/#{options[:model].tableize}"
     new_options["data-fieldname"] = options[:fieldname]
+    if options[:scope]
+      new_options["data-url"] = "/#{options[:scope]}/#{options[:model].tableize}"
+    end
 
     input_html_options.merge new_options
   end
