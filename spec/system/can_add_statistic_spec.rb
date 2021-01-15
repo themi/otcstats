@@ -15,7 +15,7 @@ RSpec.describe "Maintain Statistics", type: :system do
       fill_in "COL1", with: 'COL_ONE'
       fill_in "COL2", with: 'COL_TWO'
       fill_in "COL3", with: 'COL_THREE'
-      click_button "Create Statistic"
+      click_button "Add Stat"
 
       click_link "Done"
 
@@ -36,7 +36,7 @@ RSpec.describe "Maintain Statistics", type: :system do
       fill_in "Total", with: '100'
       fill_in "COL1", with: 'COL_ONE'
       fill_in "COL2", with: 'COL_TWO'
-      click_button "Create Statistic"
+      click_button "Add Stat"
 
       click_link "Done"
 
@@ -58,7 +58,7 @@ RSpec.describe "Maintain Statistics", type: :system do
       visit new_statistic_path(graph_id: graph.id)
 
       select 'ORG2', from: 'Org'
-      click_button "Create Statistic"
+      click_button "Add Stat"
 
       click_link "Done"
 
@@ -79,7 +79,7 @@ RSpec.describe "Maintain Statistics", type: :system do
       visit new_statistic_path(graph_id: graph.id)
 
       fill_in "OTC Member", with: 'JOJO'
-      click_button "Create Statistic"
+      click_button "Add Stat"
 
       click_link "Done"
 

@@ -19,6 +19,9 @@
   margin-top: 10px;
 }
 
+tr.greyed-out {
+  color: #bbb;
+}
 
 .pages.home .container {
   min-height: 400px;

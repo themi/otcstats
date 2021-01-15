@@ -12,8 +12,12 @@ module GraphsHelper
     end
   end
 
+  def restricted_graph?(record)
+    record.restricted? && current_member.member?
+  end
+
   def graph_action_buttons(record, commands="ed")
-    disabled = record.restricted? && current_member.member?
+    disabled = restricted_graph?(record)
 
     link_to_stats = []
     link_to_stats << button_to(new_statistic_path, method: :get, class: "btn btn-success btn-sm m-1", disabled: disabled, data: { toggle: "tooltip", placement: "top" }, title: "Add my stats") do

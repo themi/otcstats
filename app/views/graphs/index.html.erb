@@ -21,7 +21,7 @@
 
   <tbody>
     <% @graphs.each do |graph| %>
-      <tr>
+      <tr class="<%= restricted_graph?(graph) ? 'greyed-out' : '' %>">
         <td scope="row"><%= graph.item_number %></td>
         <% unless browser_object.is_mobile? %>
         <td><%= graph.organisation.to_s %></td>

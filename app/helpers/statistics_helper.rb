@@ -6,7 +6,7 @@ module StatisticsHelper
 
   def render_column_label(form, title)
     if title == "ea"
-      form.input :value, label: title, input_html: { value: 1, readonly: true }
+      form.input :value, label: "Enter each", input_html: { value: 1, readonly: true }
     else
       form.input :value, label: title
     end
