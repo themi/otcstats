@@ -1,7 +1,11 @@
 module StatisticsHelper
 
   def render_statistic(stat)
-    "#{stat}: #{stat.value}"
+    if stat
+      "#{stat}: #{stat.value}"
+    else
+      flash.notice || "Statistic successfully updated"
+    end
   end
 
   def render_column_label(form, title)

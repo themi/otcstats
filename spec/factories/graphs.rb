@@ -27,11 +27,17 @@
 FactoryBot.define do
   factory :graph do
     organisation
-    name                    { FFaker::Lorem.words }
+    name                    { FFaker::Lorem.words.join(" ") }
     sequence(:item_number)  { |n| n }
     short_name              { FFaker::Lorem.word }
     definition              { FFaker::Lorem.sentence }
     value_title             { "ea" }
     field_titles            { "COL1|COL2|COL3" }
+
+    trait :each_type do
+      value_title  { "ea" }
+      field_titles { "Name|Project|Member" }
+    end
   end
+
 end

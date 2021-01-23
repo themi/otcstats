@@ -39,6 +39,5 @@ FactoryBot.define do
     fact_column_1  { "COL1" }
     fact_column_2  { "COL2" }
     fact_column_3  { "COL3" }
-    fact_column_4  { ["COL4",nil].sample }
   end
 end

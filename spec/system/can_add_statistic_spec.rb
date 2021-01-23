@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Maintain Statistics", type: :system do
+RSpec.describe "Add Statistics", type: :system do
 
   let!(:member) { create(:member) }
   let!(:graph)  { create(:graph, organisation: member.organisation) }
