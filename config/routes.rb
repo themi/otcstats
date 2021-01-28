@@ -14,6 +14,6 @@ Rails.application.routes.draw do
     end
   end
   resources :statistics
-  get 'viewer', to:  'viewer#home'
+  get 'viewer', to:  'pages#viewer'
   root to: "pages#home"
 end
