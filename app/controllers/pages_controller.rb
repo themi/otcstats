@@ -3,4 +3,8 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def viewer
+    @signed_token = params[:signed_token]
+  end
 end
