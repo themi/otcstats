@@ -6,5 +6,6 @@ class PagesController < ApplicationController
 
   def viewer
     @signed_token = params[:signed_token]
+    render 'viewer', layout: 'simple'
   end
 end
