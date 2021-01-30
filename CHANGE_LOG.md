@@ -5,6 +5,14 @@
 * [Done] button saves data before listing stats
 * Add Member Summary Export
 
+## 4. 2021-01-30
+
+* Remove "Signup"
+
+## 3. 2021-01-29
+
+* Adding view (stream/videos)
+
 ## 2. 2021-01-24
 
 * Fix Statistic update page/form
