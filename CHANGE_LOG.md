@@ -11,9 +11,9 @@
 * What else do we use the google group for - Do we need it at all?
 * Can we just use Envisage to send out weekly reminder
 
-## 5. 2021-01-13
+## 5. 2021-02-13
 
-* Adding ration to stream
+* Adding ratio to stream
 
 ## 4. 2021-01-30
 

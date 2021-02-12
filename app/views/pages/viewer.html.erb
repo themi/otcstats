@@ -1,7 +1,7 @@
 <div style="position: relative; padding-top: <%= @stream.ratio %>%;">
   <iframe src="https://iframe.videodelivery.net/<%=@stream.video_id %>"
     title="<%=@stream.title %>"
-    style="border: none; position: absolute; top: 0; height: 100%; width: 100%;"
+    style="border: 2px solid black; position: absolute; top: 0; height: <%= @stream.display_width %>%; width: <%= @stream.display_width %>%;"
     allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
     allowfullscreen="true">
   </iframe>
