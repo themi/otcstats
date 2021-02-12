@@ -5,9 +5,7 @@ class PagesController < ApplicationController
   end
 
   def viewer
-    stream = Stream.find_by(:short_url_key, params[:short_url_key])
-    @title = stream.nil? ? "None" : stream.title
-    @signed_token = stream.nil? ? "None" : stream.video_id
+    @stream = Stream.find_by(:short_url_key, params[:short_url_key])
     render 'viewer', layout: 'simple'
   end
 end

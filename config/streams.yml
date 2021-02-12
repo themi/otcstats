@@ -1,20 +1,23 @@
 ---
 :streams:
-- :title: "John Cowden FSM School Part I Dissem seminar ANZO"
-  :video_id: "d277da201df1359c8bec9629071ac35f"
-  :nbf: 0
-  :exp: 0
+- :video_id: "d277da201df1359c8bec9629071ac35f"
+  :title: "FSM School Part I by John Cowden"
+  :description: "John Cowden presents Field Staff Members School - Part I"
+  :width: 1280
+  :height: 720
   :short_url_key: "johncowdenfsmschoolpartianzo"
-  :signed_token: "eyJhbGciOiJSUzI1NiIsImtpZCI6IjE1Y2FiMDY4YzhhMmU1OWRjYjk1ZGZkMzVkZTdiNjI4In0.eyJzdWIiOiJkMjc3ZGEyMDFkZjEzNTljOGJlYzk2MjkwNzFhYzM1ZiIsImtpZCI6IjE1Y2FiMDY4YzhhMmU1OWRjYjk1ZGZkMzVkZTdiNjI4IiwiZXhwIjoiMTYxMjM0ODMzMCIsIm5iZiI6IjE2MTIzNDExMzAifQ.UkrMitW4xJaFdMFBN8LBs7D6xqvgVPYMEN_41J2HxrgNYDaBnGT1-dq2LrRistIqK1zDICZRX7agOCNONSKY_NtJJbQwaywVHt7f8JwCn306U-P9SsZoQwZEO3kRdCYqt08fncHjUdJbzXj9u_8RdwERGxAE1sMZ_N9DIv7AvcIHLjx8PNoBo1ItCHPGXbOlyHAb7pw8aglD8VGq5SJ733RdxINwn4-VABQw3MpJ9j2idKKXyLvuRQEO_X7aTj-h26i-rAmULlV4dvxBZdUxHkJWLxqKDaxqCeaqp-V_uykwlv2GtPEtELMY6f8YpiU6f7gcrYhAwYWUFtNMFlDEsg"
-- :title: "John Cowden FSM School Part II ANZO"
-  :video_id: "78af0c8b8f577b574a3a1125a761d602"
-  :nbf: 0
-  :exp: 0
+  :signed_token: ""
+- :video_id: "78af0c8b8f577b574a3a1125a761d602"
+  :title: "FSM School Part II by John Cowden"
+  :description: "John Cowden presents Field Staff Members School - Part II"
+  :width: 1920
+  :height: 1080
   :short_url_key: "johncowdenfsmschoolpartiianzo"
-  :signed_token: "eyJhbGciOiJSUzI1NiIsImtpZCI6IjE1Y2FiMDY4YzhhMmU1OWRjYjk1ZGZkMzVkZTdiNjI4In0.eyJzdWIiOiI3OGFmMGM4YjhmNTc3YjU3NGEzYTExMjVhNzYxZDYwMiIsImtpZCI6IjE1Y2FiMDY4YzhhMmU1OWRjYjk1ZGZkMzVkZTdiNjI4IiwiZXhwIjoiMTYxMjM0ODM2MSIsIm5iZiI6IjE2MTIzNDExNjEifQ.gQI82MNtM-sQ-uoT-R3RquKa7dJ62LbEa4xzqCicS_IbJM2_uA8aBp0uMu9EoPVwBARTf2o0kOjst9rk6k96Hd5l9dafyz3PapfBvZeFDewYq3CvNXTI1D7pbnBhLQkhT9zLnk6Le-PqhOjAaFLLNEqHP38zppyTiYByLP5CvUsJIqEq2aZhLEJFLvNZ96oud8cYkfvmhoPY2RqIQ6wmUZCYSMW3Wu2tJMkQghH62C0RHR9DDpsO4GfdwJdSGK5-o9MAogXORph3Avi1foNY2P1uP4iO4_IN5rRrrT3uhhvrnpNSTPpDqowsdfV8RIq4aUK5do_urVGXxlDgkGieLg"
-- :title: "John Cowden FSM School Part III ANZO"
-  :video_id: "62510c43617d36d59b3160bbb3d0ce65"
-  :nbf: 0
-  :exp: 0
+  :signed_token: ""
+- :video_id: "62510c43617d36d59b3160bbb3d0ce65"
+  :title: "FSM School Part III by John Cowden"
+  :description: "John Cowden presents Field Staff Members School - Part III"
+  :width: 1920
+  :height: 1080
   :short_url_key: "johncowdenfsmschoolpartiiianzo"
-  :signed_token: "eyJhbGciOiJSUzI1NiIsImtpZCI6IjE1Y2FiMDY4YzhhMmU1OWRjYjk1ZGZkMzVkZTdiNjI4In0.eyJzdWIiOiI2MjUxMGM0MzYxN2QzNmQ1OWIzMTYwYmJiM2QwY2U2NSIsImtpZCI6IjE1Y2FiMDY4YzhhMmU1OWRjYjk1ZGZkMzVkZTdiNjI4IiwiZXhwIjoiMTYxMjM1NzY3MCIsIm5iZiI6IjE2MTIzNTA0NzAifQ.Va_9I0UTBjhNJ7xLL33ZWRl-ks3bM9X8OCK0CbbOQ6Hg8fkJuK33YCivJ0jQ91bn9aTey-OipTPrRUcCHxFbsJRl6le7posu3hsrZDAvQCLy7fGxWRbjKGNVbgWTBI-p5OfFJpya2HyQL7xRFkPqeZpcYfe-rmu_bygj-syBobergyOUArXSrHK6Bw6DFTnMja_KF4I_TNgEYo9qjExSSrWeAIFiQpcXCFtnWFJQaHBpKdipRsNDLhLbzQX8jH6yLdYwcN4_UxbTUjr9D9Ytaw4gyzPOAMcJJNebIShHuINa-O_IimvAlK2rFeAEhZisRVo0W3DtECW-_ualrVzysA"
+  :signed_token: ""

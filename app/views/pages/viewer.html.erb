@@ -1,1 +1,8 @@
-<div style="position: relative; padding-top: 56.25%;"><iframe src="https://iframe.videodelivery.net/<%=@signed_token %>" title="<%= @title %>" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;"  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
+<div style="position: relative; padding-top: <%= @stream.ratio %>%;">
+  <iframe src="https://iframe.videodelivery.net/<%=@stream.video_id %>"
+    title="<%=@stream.title %>"
+    style="border: none; position: absolute; top: 0; height: 100%; width: 100%;"
+    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+    allowfullscreen="true">
+  </iframe>
+</div>

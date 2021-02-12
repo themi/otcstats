@@ -1,9 +1,19 @@
 
 ## TODO
 
-* Also add Post Stats
-* [Done] button saves data before listing stats
-* Add Member Summary Export
+* Add Stats: Show the stat that was recently added (to ack the entry)
+* Index Stats: Show everyones stats in the list (to ack and coord the team work)
+* Make ForgotPassword work
+* Add Post Stats
+
+## Organise
+
+* What else do we use the google group for - Do we need it at all?
+* Can we just use Envisage to send out weekly reminder
+
+## 5. 2021-01-13
+
+* Adding ration to stream
 
 ## 4. 2021-01-30
 
