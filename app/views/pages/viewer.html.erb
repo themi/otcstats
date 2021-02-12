@@ -1,4 +1,4 @@
-<div style="position: relative; padding-top: <%= @stream.ratio %>%;">
+<div style="position: relative; padding-top: <%= @stream.ratio %>%; display: flex; justify-content: center">
   <iframe src="https://iframe.videodelivery.net/<%=@stream.video_id %>"
     title="<%=@stream.title %>"
     style="border: 2px solid black; position: absolute; top: 0; height: <%= @stream.display_width %>%; width: <%= @stream.display_width %>%;"
