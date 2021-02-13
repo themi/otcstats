@@ -1,4 +1,7 @@
-<div style="position: relative; padding-top: <%= @stream.ratio %>%; display: flex; justify-content: center">
+<div style="display: flex; justify-content: center">
+  <%= button_to "Feedback Survey", "/feedback/#{@stream.short_url_key}", title: "It would really help us out if you filled in the feedback survey after watching this viseo - Thank you!", class: "btn btn-primary mb-1" %>
+</div>
+<div style="position: relative; padding-bottom:<%= @stream.ratio %>%; display: flex; justify-content: center">
   <iframe src="https://iframe.videodelivery.net/<%=@stream.video_id %>"
     title="<%=@stream.title %>"
     style="border: 2px solid black; position: absolute; top: 0; height: <%= @stream.display_width %>%; width: <%= @stream.display_width %>%;"

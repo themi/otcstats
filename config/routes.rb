@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     end
   end
   resources :statistics
+
   get 'viewer/:short_url_key', to:  'pages#viewer'
+  post 'feedback/:short_url_key', to:  'pages#feedback'
+  post 'survey', to:  'pages#survey'
   root to: "pages#home"
 end

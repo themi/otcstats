@@ -13,7 +13,8 @@
 
 ## 5. 2021-02-13
 
-* Adding ratio to stream
+* Adding ratio and display_width to stream
+* Adding feedback form
 
 ## 4. 2021-01-30
 

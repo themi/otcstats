@@ -1,0 +1,27 @@
+<div class="container" style="display: flex; justify-content: center">
+
+  <div id="survey">
+    <p>Please fill in the following survey</p>
+    <%= simple_form_for(:survey, url: '/survey') do |f| %>
+      <div class="form-inputs">
+        <%= f.input :video_title, as: :hidden, :input_html => { value: @stream.title } %>
+        <%= f.input :question1, as: :text, required: false, label: "1. How are you going to use this data from today’s Seminar?" %>
+        <%= f.input :question2, as: :text, required: false, label: "2. What did you decide today?" %>
+        <%= f.input :question3, as: :text, required: false, label: "3. What subjects do you want to cover next?" %>
+        <%= f.input :question4, as: :text, required: false, label: "4. Name out 3 people who you can contact and bring to this FSM School." %>
+        <%= f.input :question5, as: :text, required: false, label: "5. Anything else you would like to communicate?" %>
+        <%= f.input :question6, as: :text, required: false, label: "6. Are there any selectees you need help with? Please specify which Org" %>
+        <%= f.input :email, required: false, label: "Your Email Address" %>
+        <%= f.input :name, required: false, label: "Your Name" %>
+        <div class="checkit-field">
+          <%= f.input :checkit, required: false, label: "Check" %>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, value: "Submit Survey", class: "btn btn-primary mb-1" %>
+      </div>
+    <% end %>
+  </div>
+
+</div>

@@ -15,6 +15,10 @@
  *= require_self
  */
 
+.checkit-field {
+  display: none;
+}
+
 .main-container {
   margin-top: 10px;
 }
