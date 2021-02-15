@@ -1,5 +1,12 @@
 ---
 :streams:
+- :video_id: "REPLACEME"
+  :title: "None"
+  :description: "None"
+  :width: 1920
+  :height: 1080
+  :short_url_key: "None"
+  :signed_token: "None"
 - :video_id: "d277da201df1359c8bec9629071ac35f"
   :title: "FSM School Part I by John Cowden"
   :description: "John Cowden presents Field Staff Members School - Part I"
