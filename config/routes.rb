@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :statistics
 
   get 'viewer/:short_url_key', to:  'pages#viewer'
+  get 'feedback/:short_url_key', to:  'pages#feedback'
   post 'feedback/:short_url_key', to:  'pages#feedback'
   post 'survey', to:  'pages#survey'
   root to: "pages#home"
