@@ -28,3 +28,10 @@
   :height: 720
   :short_url_key: "johncowdenfsmschoolpartiiianzo"
   :signed_token: ""
+- :video_id: "REPLACEME"
+  :title: "Admin Tools Part 1 by Fred King"
+  :description: "Learn the Admins Tools you need to prosper"
+  :width: 1280
+  :height: 720
+  :short_url_key: "fredkingadmintoolspart1anzo"
+  :signed_token: "None"

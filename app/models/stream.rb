@@ -1,17 +1,12 @@
 class Stream
-  class << self
-    attr_accessor :streams
-    def find(id)
-      @streams ||= load_from_file[:streams]
-      max = streams.map { |s| s[:width] }.max
-      found = streams.detect { |s| s[:video_id] == id }
-      found.nil? ? nil : Stream.new(found.merge(max_width: max))
-    end
+  include ActiveModel::Model
+  extend ActiveModel::Naming
 
-    def find_by(attrib_name, attrib_value)
-      @streams ||= load_from_file[:streams]
+  class << self
+    def find(id)
+      streams = load_from_file[:streams]
       max = streams.map { |s| s[:width] }.max
-      found = streams.detect { |s| s[attrib_name.to_sym] == attrib_value }
+      found = streams.detect { |s| s[:short_url_key] == id }
       found.nil? ? nil : Stream.new(found.merge(max_width: max))
     end
 
@@ -26,12 +21,6 @@ class Stream
   end
 
   attr_accessor :title, :description, :video_id, :signed_token, :short_url_key, :width, :height, :max_width
-
-  def initialize(data_hash)
-    data_hash.each do |key, value|
-      send("#{key}=", value)
-    end
-  end
 
   def ratio
     (self.height.to_f / self.width.to_f * 100)

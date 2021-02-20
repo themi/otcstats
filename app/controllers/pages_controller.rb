@@ -5,12 +5,13 @@ class PagesController < ApplicationController
   end
 
   def viewer
-    @stream = Stream.find_by(:short_url_key, params[:short_url_key])
+    @stream = Stream.find(params[:short_url_key])
     render 'viewer', layout: 'simple'
   end
 
   def feedback
-    @stream = Stream.find_by(:short_url_key, params[:short_url_key])
+    @stream = Stream.find(params[:short_url_key])
+    @survey = Survey.find(params[:short_url_key])
     render 'feedback', layout: 'simple'
   end
 
@@ -34,7 +35,7 @@ class PagesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def survey_params
-    params.require(:survey).permit(:video_title, :question1,:question2,:question3,:question4,:question5,:question6,:email,:name, :checkit)
+    params.require(:survey).permit(:video_title, :question1,:question2,:question3,:question4,:question5,:question6,:question7,:question8,:email,:name, :checkit)
   end
 
   def any_question_responses?(data_hash)

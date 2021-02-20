@@ -1,0 +1,20 @@
+---
+:surveys:
+- :id: 'fsmschool'
+  :label_1: "1. How are you going to use this data from today’s Seminar?"
+  :label_2: "2. What did you decide today?"
+  :label_3: "3. What subjects do you want to cover next?"
+  :label_4: "4. Name out 3 people who you can contact and bring to this FSM School."
+  :label_5: "5. Anything else you would like to communicate?"
+  :label_6: "6. Are there any selectees you need help with? Please specify which Org"
+  :label_email: "Your Email Address"
+  :label_name: "Your Name"
+- :id: 'admintools'
+  :label_1: "1. How are you going to use this data from today’s Seminar?"
+  :label_2: "2. What did you decide today?"
+  :label_3: "3. What subjects do you want to cover next?"
+  :label_4: "4. Name out 3 people who you can contact and bring to this FSM School."
+  :label_5: "5. Anything else you would like to communicate?"
+  :label_6: "6. Are there any selectees you need help with? Please specify which Org"
+  :label_email: "Your Email Address"
+  :label_name: "Your Name"

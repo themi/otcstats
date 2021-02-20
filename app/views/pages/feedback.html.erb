@@ -2,17 +2,23 @@
 
   <div id="survey">
     <p>Please fill in the following survey</p>
-    <%= simple_form_for(:survey, url: '/survey') do |f| %>
+    <%= simple_form_for(@survey, url: '/survey') do |f| %>
       <div class="form-inputs">
         <%= f.input :video_title, as: :hidden, :input_html => { value: @stream.title } %>
-        <%= f.input :question1, as: :text, required: false, label: "1. How are you going to use this data from today’s Seminar?" %>
-        <%= f.input :question2, as: :text, required: false, label: "2. What did you decide today?" %>
-        <%= f.input :question3, as: :text, required: false, label: "3. What subjects do you want to cover next?" %>
-        <%= f.input :question4, as: :text, required: false, label: "4. Name out 3 people who you can contact and bring to this FSM School." %>
-        <%= f.input :question5, as: :text, required: false, label: "5. Anything else you would like to communicate?" %>
-        <%= f.input :question6, as: :text, required: false, label: "6. Are there any selectees you need help with? Please specify which Org" %>
-        <%= f.input :email, required: false, label: "Your Email Address" %>
-        <%= f.input :name, required: false, label: "Your Name" %>
+        <%= f.input :question1, as: :text, required: false, label: f.object.label_1 %>
+        <%= f.input :question2, as: :text, required: false, label: f.object.label_2 %>
+        <%= f.input :question3, as: :text, required: false, label: f.object.label_3 %>
+        <%= f.input :question4, as: :text, required: false, label: f.object.label_4 %>
+        <%= f.input :question5, as: :text, required: false, label: f.object.label_5 %>
+        <%= f.input :question6, as: :text, required: false, label: f.object.label_6 %>
+        <% unless f.object.question7.nil? %>
+          <%= f.input :question7, as: :text, required: false, label: f.object.label_7 %>
+        <% end %>
+        <% unless f.object.question8.nil? %>
+          <%= f.input :question7, as: :text, required: false, label: f.object.label_8 %>
+        <% end %>
+        <%= f.input :email, required: false  %>
+        <%= f.input :name, required: false  %>
         <div class="checkit-field">
           <%= f.input :checkit, required: false, label: "Check" %>
         </div>
