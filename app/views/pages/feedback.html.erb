@@ -1,6 +1,6 @@
 <div class="container" style="display: flex; justify-content: center">
-
   <div id="survey">
+    <h2><%= @stream.title %></h2>
     <p>Please fill in the following survey</p>
     <%= simple_form_for(@survey, url: '/survey') do |f| %>
       <div class="form-inputs">
@@ -17,8 +17,10 @@
         <% unless f.object.question8.nil? %>
           <%= f.input :question7, as: :text, required: false, label: f.object.label_8 %>
         <% end %>
-        <%= f.input :email, required: false  %>
-        <%= f.input :name, required: false  %>
+        <%= f.input :phone, required: false, label: f.object.label_phone  %>
+        <%= f.input :name, required: false, label: f.object.label_name  %>
+        <%= f.input :training, required: false, label: f.object.label_training  %>
+        <%= f.input :processing, required: false, label: f.object.label_processing  %>
         <div class="checkit-field">
           <%= f.input :checkit, required: false, label: "Check" %>
         </div>

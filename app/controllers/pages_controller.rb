@@ -35,7 +35,7 @@ class PagesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def survey_params
-    params.require(:survey).permit(:video_title, :question1,:question2,:question3,:question4,:question5,:question6,:question7,:question8,:email,:name, :checkit)
+    params.require(:survey).permit(:video_title, :question1,:question2,:question3,:question4,:question5,:question6,:question7,:question8,:email,:phone,:name,:training,:processing,:checkit)
   end
 
   def any_question_responses?(data_hash)

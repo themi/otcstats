@@ -20,6 +20,6 @@ class Survey
     end
   end
 
-  attr_accessor :id, :name, :email, :question1, :question2, :question3, :question4, :question5, :question6, :question7, :question8
-  attr_accessor :label_name, :label_email, :label_1, :label_2, :label_3, :label_4, :label_5, :label_6, :label_7, :label_8, :checkit
+  attr_accessor :id, :name, :phone, :training, :processing, :question1, :question2, :question3, :question4, :question5, :question6, :question7, :question8
+  attr_accessor :label_name, :label_phone, :label_training, :label_processing, :label_1, :label_2, :label_3, :label_4, :label_5, :label_6, :label_7, :label_8, :checkit
 end
