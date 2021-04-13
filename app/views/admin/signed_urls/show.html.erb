@@ -19,12 +19,17 @@
 
   <p>
     <strong>Expires in:</strong>
-    <%= @signed_url.expires_in %>
+    <%= @signed_url.expires_in %>secs
   </p>
 
   <p>
     <strong>Link:</strong>
     <%= File.join(ENV.fetch('HOST_URL'), 'signed', @signed_url.short_path) %>
+  </p>
+
+  <p>
+    <strong>Created at:</strong>
+    <%= @signed_url.created_at %>
   </p>
 
   <p>

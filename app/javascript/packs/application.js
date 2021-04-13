@@ -8,17 +8,32 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-Rails.start()
-Turbolinks.start()
-ActiveStorage.start()
-
 import "bootstrap"
 import "./bootstrap-autocompleter"
 import "./generate_token"
+import "clipboard"
+
+Rails.start()
+Turbolinks.start()
+ActiveStorage.start()
 
 $(document).on('turbolinks:load', function() {
   $('[data-toggle="tooltip"]').tooltip();
   $('[data-toggle="popover"]').popover();
   $('.toast').toast('show', { autohide: false, delay: 3000 });
   $('[data-provider="autocompleter"]').autocompleter();
+
+  var clipboard = new ClipboardJS('.copy-btn');
+  clipboard.on('success', function(e) {
+      console.info('Action:', e.action);
+      console.info('Text:', e.text);
+      console.info('Trigger:', e.trigger);
+
+      e.clearSelection();
+  });
+
+  clipboard.on('error', function(e) {
+      console.error('Action:', e.action);
+      console.error('Trigger:', e.trigger);
+  });
 });
