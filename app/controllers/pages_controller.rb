@@ -11,7 +11,11 @@ class PagesController < ApplicationController
   end
 
   def signed
-    if Time.current > (@signed_url.created_at + @signed_url.expires_in)
+    if @signed_url.nil?
+      redirect_to root_path, alert: "Invalid link!" and return
+    end
+
+    if is_signed_url_expired?
       redirect_to root_path, alert: "That link has expired" and return
     end
 
@@ -54,18 +58,23 @@ class PagesController < ApplicationController
     result.reject { |c| c.blank? }.count > 0
   end
 
+  def is_signed_url_expired?
+    Time.current > (@signed_url.created_at + @signed_url.expires_in)
+  end
+
   def authenticate_signed_url
     @signed_url = SignedUrl.find_by(short_path: params[:short_path])
 
-    if @signed_url.nil?
-      redirect_to root_path, alert: "Invalid link!" and return false
-    end
-
-    if authenticate_with_http_basic { |u, p| u == @signed_url.email || p == @signed_url.email }
-      return true
+    if authenticate_with_http_basic { |u, p| check_valid_details(u, p) }
+      # all good
     else
       request_http_basic_authentication
     end
+    true
+  end
+
+  def check_valid_details(user_name, password)
+    (user_name == @signed_url.email || password == @signed_url.email)
   end
 
 end
