@@ -21,7 +21,7 @@ module Admin
       attribs = {
         stream_id: @stream.short_url_key,
         short_path: SecureRandom.hex(10),
-        expires_in: ENV.fetch(SIGNING_EXPIRES_IN).to_i,
+        expires_in: ENV.fetch('SIGNING_EXPIRES_IN').to_i,
       }
       @signed_url = SignedUrl.new(attribs)
     end
