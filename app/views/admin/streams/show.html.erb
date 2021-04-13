@@ -1,0 +1,21 @@
+
+<%= javascript_tag "
+var key_id = '#{ENV.fetch('CLOUDFLARE_ACCOUNT_ID')}';
+var video_id = '#{@stream.video_id}';
+var private_key = '#{ENV.fetch('CLOUDFLARE_STREAMING_PRIVATE_KEY_PEM')}';
+var expires_in = '1h';" -%>
+
+<div class="container">
+  <p>
+    <strong>Title:</strong>
+    <%= @stream.title.to_s %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @stream.description %>
+  </p>
+
+
+  <%= link_to 'Back', admin_streams_path, class: "btn btn-info mb-1" %>
+</div>

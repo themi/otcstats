@@ -9,6 +9,22 @@ class PagesController < ApplicationController
     render 'viewer', layout: 'simple'
   end
 
+  def signed
+    @signed_url = SignedUrl.find_by(short_path: params[:short_path])
+
+    if @signed_url.nil?
+      redirect_to root_path, alert: "Invalid link!"
+      return
+    elsif Time.current > (@signed_url.created_at + @signed_url.expires_in)
+      redirect_to root_path, alert: "That link has expired"
+      return
+    end
+
+    @stream = Stream.find(@signed_url.stream_id)
+    @signed_url.update(used_at: Time.current)
+    render 'signed', layout: 'simple'
+  end
+
   def feedback
     @stream = Stream.find(params[:short_url_key])
     @survey = Survey.find(params[:short_url_key])

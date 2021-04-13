@@ -1,0 +1,36 @@
+<div class="container">
+
+  <p id="notice"><%= notice %></p>
+
+  <h1>Signed Urls</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Stream</th>
+        <th>Expires in</th>
+        <th>Used at</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @signed_urls.each do |signed_url| %>
+        <tr>
+          <td><%= signed_url.email %></td>
+          <td><%= signed_url.stream_id %></td>
+          <td><%= signed_url.expires_in %></td>
+          <td><%= signed_url.used_at %></td>
+          <td><%= link_to 'Show', admin_signed_url_path(signed_url), class: "btn btn-secondary mb-1" %></td>
+          <td><%= link_to 'Edit', edit_admin_signed_url_path(signed_url), class: "btn btn-primary mb-1" %></td>
+          <td><%= link_to 'Destroy', admin_signed_url_path(signed_url), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger mb-1" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Signed Url', admin_streams_path, class: "btn btn-primary mb-1" %>
+</div>

@@ -14,6 +14,7 @@ ActiveStorage.start()
 
 import "bootstrap"
 import "./bootstrap-autocompleter"
+import "./generate_token"
 
 $(document).on('turbolinks:load', function() {
   $('[data-toggle="tooltip"]').tooltip();

@@ -3,6 +3,14 @@ class Stream
   extend ActiveModel::Naming
 
   class << self
+    def select_list
+      load_from_file[:streams].map { |stream| [stream[:title], stream[:short_url_key]] }
+    end
+
+    def all
+      streams = load_from_file[:streams].map { |stream| self.new(stream) }
+    end
+
     def find(id)
       streams = load_from_file[:streams]
       max = streams.map { |s| s[:width] }.max

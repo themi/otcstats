@@ -1,0 +1,38 @@
+<div class="container">
+
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @signed_url.email %>
+  </p>
+
+  <p>
+    <strong>Token:</strong>
+    [FILTERED]
+  </p>
+
+  <p>
+    <strong>Stream:</strong>
+    <%= @signed_url.stream_id %>
+  </p>
+
+  <p>
+    <strong>Expires in:</strong>
+    <%= @signed_url.expires_in %>
+  </p>
+
+  <p>
+    <strong>Link:</strong>
+    <%= File.join(ENV.fetch('HOST_URL'), 'signed', @signed_url.short_path) %>
+  </p>
+
+  <p>
+    <strong>Used at:</strong>
+    <%= @signed_url.used_at %>
+  </p>
+
+  <%= link_to 'Edit', edit_admin_signed_url_path(@signed_url), class: "btn btn-primary mb-1" %> |
+  <%= link_to 'Back', admin_signed_urls_path, class: "btn btn-info mb-1" %>
+
+</div>

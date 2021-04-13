@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Streams</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Width</th>
+        <th scope="col">Height</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @streams.each do |stream| %>
+        <tr>
+          <td><%= stream.title %></td>
+          <td><%= stream.description %></td>
+          <td><%= stream.width %></td>
+          <td><%= stream.height %></td>
+          <td><%= link_to 'Token', new_admin_signed_url_path(short_url_key: stream.short_url_key), class: "btn btn-primary mb-1" if stream.signed_token == "TBA"  %></td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
