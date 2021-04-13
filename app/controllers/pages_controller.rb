@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_member!
+  before_action :authenticate_signed_url, only: :signed
 
   def home
   end
@@ -10,14 +11,8 @@ class PagesController < ApplicationController
   end
 
   def signed
-    @signed_url = SignedUrl.find_by(short_path: params[:short_path])
-
-    if @signed_url.nil?
-      redirect_to root_path, alert: "Invalid link!"
-      return
-    elsif Time.current > (@signed_url.created_at + @signed_url.expires_in)
-      redirect_to root_path, alert: "That link has expired"
-      return
+    if Time.current > (@signed_url.created_at + @signed_url.expires_in)
+      redirect_to root_path, alert: "That link has expired" and return
     end
 
     @stream = Stream.find(@signed_url.stream_id)
@@ -57,6 +52,20 @@ class PagesController < ApplicationController
   def any_question_responses?(data_hash)
     result = data_hash.map { |k,v| v if k.to_s.starts_with?("question") }
     result.reject { |c| c.blank? }.count > 0
+  end
+
+  def authenticate_signed_url
+    @signed_url = SignedUrl.find_by(short_path: params[:short_path])
+
+    if @signed_url.nil?
+      redirect_to root_path, alert: "Invalid link!" and return false
+    end
+
+    if authenticate_with_http_basic { |u, p| u == @signed_url.email || p == @signed_url.email }
+      return true
+    else
+      request_http_basic_authentication
+    end
   end
 
 end
