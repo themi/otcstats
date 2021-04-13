@@ -21,7 +21,7 @@
         <tr>
           <td><%= signed_url.email %></td>
           <td><%= signed_url.stream_id %></td>
-          <td><%= I18n.l(signed_url.created_at, format: :short) %></td>
+          <td><%= I18n.l(signed_url.created_at, format: :short) if signed_url.created_at %></td>
           <td><%= signed_url.expires_in %>secs</td>
           <td><%= I18n.l(signed_url.used_at, format: :short) %></td>
           <td><%= link_to 'Show', admin_signed_url_path(signed_url), class: "btn btn-secondary mb-1" %></td>
