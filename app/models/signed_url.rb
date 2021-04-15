@@ -13,4 +13,7 @@
 #  stream_id  :string
 #
 class SignedUrl < ApplicationRecord
+  def check_valid_details(user_name, password)
+    (user_name == email || password == email)
+  end
 end

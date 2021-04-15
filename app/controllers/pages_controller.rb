@@ -65,16 +65,15 @@ class PagesController < ApplicationController
   def authenticate_signed_url
     @signed_url = SignedUrl.find_by(short_path: params[:short_path])
 
-    if authenticate_with_http_basic { |u, p| check_valid_details(u, p) }
-      # all good
-    else
-      request_http_basic_authentication
+    unless @signed_url.nil?
+      if authenticate_with_http_basic { |u, p| @signed_url.check_valid_details(u, p) }
+        # all good
+      else
+        request_http_basic_authentication
+      end
     end
-    true
-  end
 
-  def check_valid_details(user_name, password)
-    (user_name == @signed_url.email || password == @signed_url.email)
+    true
   end
 
 end
