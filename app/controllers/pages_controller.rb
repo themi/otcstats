@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_member!
+  before_action :set_cache_headers, only: [:signed, :viewer]
   before_action :authenticate_signed_url, only: :signed
 
   def home
@@ -74,6 +75,12 @@ class PagesController < ApplicationController
     end
 
     true
+  end
+
+  def set_cache_headers
+    response.headers["Cache-Control"] = "no-cache, no-store"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "Mon, 01 Jan 1990 00:00:00 GMT"
   end
 
 end
