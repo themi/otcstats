@@ -10,6 +10,7 @@ module OpsCare
     def apply_envvars
       unless AwsUtils.this_instance_id.nil?
         OpsCare::Envvars.new.all.each do |env|
+puts "----> #{env.inspect}"
           ENV.store(env[:name], env[:value])
         end
         puts "[OpsCare]: Applied envvars from AWS Parameter store!"

@@ -13,7 +13,7 @@ module OpsCare
       end
 
       def this_region
-        az = fetch_meta_data('placement/')
+        az = fetch_meta_data('placement/availability-zone')
         unless az.nil?
           region = az[0...-1]
           region
@@ -31,10 +31,8 @@ module OpsCare
             http.open_timeout = 1
           end
           resp = http.start() { |req| req.get("/latest/meta-data/#{thing}") }
-puts "-----> Body: #{resp.body.inspect}"
           resp.body
         rescue => err
-puts "-----> Error: #{err.message}"
           # ignore errors
         end
       end
