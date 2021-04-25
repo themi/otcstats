@@ -29,7 +29,7 @@ module OpsCare
     end
 
     def envvar_key_prefix
-      "/envvars/#{ENV.fetch('RAILS_ENV', 'production')}/"
+      "/envvars/#{ENV.fetch('RAILS_ENV', 'production')}"
     end
 
   end
