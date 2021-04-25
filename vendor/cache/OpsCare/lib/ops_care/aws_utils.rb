@@ -17,7 +17,7 @@ puts "----->ID: #{id.inspect}"
       def this_region
         az = fetch_meta_data('placement/availability-zone')
 puts "----->AZ: #{az.inspect}"
-        if az
+        unless az.nil?
           region = az[0...-1]
           region
         end
@@ -34,6 +34,8 @@ puts "----->AZ: #{az.inspect}"
             http.open_timeout = 1
           end
           resp = http.start() { |req| req.get("/latest/meta-data/#{thing}") }
+puts "-----> #{resp.body.inspect}"
+          resp.body
         rescue => err
 puts "-----> #{err.message}"
           # ignore errors
