@@ -21,12 +21,14 @@ module OpsCare
       private
 
       def fetch_meta_data(thing)
+        is_dev = (ENV.fetch('RAILS_ENV', 'development') == 'development')
         begin
           http = Net::HTTP.new(@metadata_ip)
-          http.read_timeout = 10
-          http.open_timeout = 6
+          http.read_timeout = is_dev ? 1 : 30
+          http.open_timeout = is_dev ? 1 : 30
           resp = http.start() { |req| req.get("/latest/meta-data/#{thing}") }
-        rescue
+        rescue => err
+puts "---> #{err.message}"
           # ignore errors
         end
       end
