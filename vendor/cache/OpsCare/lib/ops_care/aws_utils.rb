@@ -9,13 +9,18 @@ module OpsCare
 
     class << self
       def this_instance_id
-        fetch_meta_data('instance-id')
+        id = fetch_meta_data('instance-id')
+puts "----->ID: #{id.inspect}"
+        id
       end
 
       def this_region
         az = fetch_meta_data('placement/availability-zone')
-        region = az[0...-1]
-        region
+puts "----->AZ: #{az.inspect}"
+        if az
+          region = az[0...-1]
+          region
+        end
       end
 
       private
@@ -24,11 +29,13 @@ module OpsCare
         is_dev = (ENV.fetch('RAILS_ENV', 'development') == 'development')
         begin
           http = Net::HTTP.new(@metadata_ip)
-          http.read_timeout = is_dev ? 1 : 30
-          http.open_timeout = is_dev ? 1 : 30
+          if is_dev
+            http.read_timeout = 1
+            http.open_timeout = 1
+          end
           resp = http.start() { |req| req.get("/latest/meta-data/#{thing}") }
         rescue => err
-puts "---> #{err.message}"
+puts "-----> #{err.message}"
           # ignore errors
         end
       end
