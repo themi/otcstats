@@ -12,7 +12,7 @@ module OpsCare
       params = aws_client.describe_parameters(options).parameters
       params.map do |param|
         {
-          name: strip_key_prefix(para.name),
+          name: strip_key_prefix(param.name),
           value: get_parameter_value(param.name),
         }
       end
