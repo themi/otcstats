@@ -5,15 +5,15 @@ module OpsCare
 
     def all
       options = {
-        filters: [
-          { key: "Name", values: [envvar_key_prefix]}
-        ]
+        path: envvar_key_prefix,
+        with_decryption: true,
+        recursive: false,
       }
-      params = aws_client.describe_parameters(options).parameters
+      params = aws_client.get_parameters_by_path(options).parameters
       params.map do |param|
         {
           name: strip_key_prefix(param.name),
-          value: get_parameter_value(param.name),
+          value: param.value,
         }
       end
     end
@@ -22,11 +22,6 @@ module OpsCare
 
     def aws_client_class
       Aws::SSM::Client
-    end
-
-    def get_parameter_value(id)
-      resp = aws_client.get_parameter({ name: id, with_decryption: true })
-      resp.parameter.value
     end
 
     def strip_key_prefix(id)
