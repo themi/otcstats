@@ -22,7 +22,7 @@ gem 'devise'
 # gem 'pundit'
 # gem 'image_processing', '~> 1.2'
 
-gem "ops_care", git: "git@github.com:reinteractive/OpsCare.git", branch: "master"
+gem "ops_care", path: "/Users/themi/projects/reinteractive/OpsCare" #git: "git@github.com:reinteractive/OpsCare.git", branch: "master"
 gem "ffaker"
 
 group :development do
