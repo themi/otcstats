@@ -7,7 +7,7 @@ module OpsCare
       options = {
         path: envvar_key_prefix,
         with_decryption: true,
-        recursive: false,
+        recursive: true,
       }
       params = aws_client.get_parameters_by_path(options).parameters
       params.map do |param|
