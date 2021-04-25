@@ -9,14 +9,11 @@ module OpsCare
 
     class << self
       def this_instance_id
-        id = fetch_meta_data('instance-id')
-puts "----->ID: #{id.inspect}"
-        id
+        fetch_meta_data('instance-id')
       end
 
       def this_region
-        az = fetch_meta_data('placement/availability-zone')
-puts "----->AZ: #{az.inspect}"
+        az = fetch_meta_data('placement/')
         unless az.nil?
           region = az[0...-1]
           region
@@ -34,10 +31,10 @@ puts "----->AZ: #{az.inspect}"
             http.open_timeout = 1
           end
           resp = http.start() { |req| req.get("/latest/meta-data/#{thing}") }
-puts "-----> #{resp.body.inspect}"
+puts "-----> Body: #{resp.body.inspect}"
           resp.body
         rescue => err
-puts "-----> #{err.message}"
+puts "-----> Error: #{err.message}"
           # ignore errors
         end
       end
