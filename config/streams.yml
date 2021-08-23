@@ -56,13 +56,13 @@
   :height: 720
   :short_url_key: "fredkingadmintoolspart3anzo"
   :signed_token: "None"
-# - :video_id: "xxx"
-#   :title: "Admin Tools Part 4 by Fred King"
-#   :description: "Learn the Admins Tools you need to prosper"
-#   :width: 1280
-#   :height: 720
-#   :short_url_key: "fredkingadmintoolspart4anzo"
-#   :signed_token: "None"
+- :video_id: "f997b545d81a747c207ace21fca02272"
+  :title: "Admin Tools Part 4 by Fred King"
+  :description: "Learn the Admins Tools you need to prosper"
+  :width: 1280
+  :height: 720
+  :short_url_key: "fredkingadmintoolspart4anzo"
+  :signed_token: "None"
 - :video_id: "64d75b3fae1ca6814ba144748fb9f4b3"
   :title: "Admin Tools Part 5 by Fred King"
   :description: "Learn the Admins Tools you need to prosper"
