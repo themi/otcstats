@@ -7,27 +7,27 @@
   :height: 1080
   :short_url_key: "None"
   :signed_token: "None"
-- :video_id: "d277da201df1359c8bec9629071ac35f"
-  :title: "FSM School Part I by John Cowden"
-  :description: "John Cowden presents Field Staff Members School - Part I"
-  :width: 1280
-  :height: 720
-  :short_url_key: "johncowdenfsmschoolpartianzo"
-  :signed_token: ""
-- :video_id: "78af0c8b8f577b574a3a1125a761d602"
-  :title: "FSM School Part II by John Cowden"
-  :description: "John Cowden presents Field Staff Members School - Part II"
-  :width: 1280
-  :height: 720
-  :short_url_key: "johncowdenfsmschoolpartiianzo"
-  :signed_token: ""
-- :video_id: "62510c43617d36d59b3160bbb3d0ce65"
-  :title: "FSM School Part III by John Cowden"
-  :description: "John Cowden presents Field Staff Members School - Part III"
-  :width: 1280
-  :height: 720
-  :short_url_key: "johncowdenfsmschoolpartiiianzo"
-  :signed_token: ""
+# - :video_id: "d277da201df1359c8bec9629071ac35f"
+#   :title: "FSM School Part I by John Cowden"
+#   :description: "John Cowden presents Field Staff Members School - Part I"
+#   :width: 1280
+#   :height: 720
+#   :short_url_key: "johncowdenfsmschoolpartianzo"
+#   :signed_token: ""
+# - :video_id: "78af0c8b8f577b574a3a1125a761d602"
+#   :title: "FSM School Part II by John Cowden"
+#   :description: "John Cowden presents Field Staff Members School - Part II"
+#   :width: 1280
+#   :height: 720
+#   :short_url_key: "johncowdenfsmschoolpartiianzo"
+#   :signed_token: ""
+# - :video_id: "62510c43617d36d59b3160bbb3d0ce65"
+#   :title: "FSM School Part III by John Cowden"
+#   :description: "John Cowden presents Field Staff Members School - Part III"
+#   :width: 1280
+#   :height: 720
+#   :short_url_key: "johncowdenfsmschoolpartiiianzo"
+#   :signed_token: ""
 - :video_id: "632bdd83971d2bc470cfa26c134ff277"
   :title: "Admin Tools Part 1 by Fred King"
   :description: "Learn the Admins Tools you need to prosper"
@@ -55,4 +55,18 @@
   :width: 1280
   :height: 720
   :short_url_key: "fredkingadmintoolspart3anzo"
+  :signed_token: "None"
+# - :video_id: "xxx"
+#   :title: "Admin Tools Part 4 by Fred King"
+#   :description: "Learn the Admins Tools you need to prosper"
+#   :width: 1280
+#   :height: 720
+#   :short_url_key: "fredkingadmintoolspart4anzo"
+#   :signed_token: "None"
+- :video_id: "64d75b3fae1ca6814ba144748fb9f4b3"
+  :title: "Admin Tools Part 5 by Fred King"
+  :description: "Learn the Admins Tools you need to prosper"
+  :width: 1280
+  :height: 720
+  :short_url_key: "fredkingadmintoolspart5anzo"
   :signed_token: "None"
